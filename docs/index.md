@@ -21,8 +21,7 @@ no_in_page_title: true
   </div>
   <div class="col-md-4 text-center">
     <h2>Using MultiScanner</h2>
-    <p>You can also see examples of common design patterns in MAEC and
-    learn how to create and understand idiomatic MAEC content.</p>
+    <p>Using MultiScanner...</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/use_cases">Use Cases »</a></p>
   </div>
   <div class="col-md-4 text-center">
