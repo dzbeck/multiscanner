@@ -1,0 +1,5 @@
+site_name: MultiScanner
+pages:
+    - Overview: index.md
+    - Installation: install.md
+    - Modules: modules.md
