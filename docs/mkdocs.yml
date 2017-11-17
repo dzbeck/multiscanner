@@ -1,4 +1,4 @@
-site_name: MultiScanner
+site_name: multiscannerDocs
 pages:
     - Overview: index.md
     - Installation: install.md
