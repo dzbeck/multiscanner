@@ -1,5 +1,5 @@
-# Installation
-==============
+Installation
+============
 
 ### MultiScanner ###
 If you're running on a RedHat or Debian based linux distribution you should try and run

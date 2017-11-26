@@ -1,3 +1,18 @@
+Module Writing
+--------------
+Modules are intended to be quickly written and incorporated into the framework.
+A finished module must be placed in the modules folder before it can be used. The
+configuration file does not need to be manually updated. See [docs/module\_writing.md](<docs/module_writing.md>)
+for more information.
+
+Module Configuration
+--------------------
+Modules are configured within the configuration file, config.ini. See
+[docs/modules.md](<docs/modules.md>) for more information.
+
+Default Modules
+---------------
+
 ### General ###
 - **path** - This is where the executable is located
 - **cmdline** - This is an array of command line options be to passed to the executable

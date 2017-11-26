@@ -21,19 +21,6 @@ An installer script is included in the project [install.sh](<install.sh>), which
 installs the prerequisites on most systems.
 
 
-
-Module Writing
---------------
-Modules are intended to be quickly written and incorporated into the framework.
-A finished module must be placed in the modules folder before it can be used. The
-configuration file does not need to be manually updated. See [docs/module\_writing.md](<docs/module_writing.md>)
-for more information.
-
-Module Configuration
---------------------
-Modules are configured within the configuration file, config.ini. See
-[docs/modules.md](<docs/modules.md>) for more information.
-
 Python API
 ----------
 MultiScanner can be incorporated as a module in another projects. Below is a simple
@@ -49,8 +36,3 @@ Results is a dictionary object where each key is a filename of a scanned file.
 
 `multiscanner.config_init(filepath)` will create a default configuration file at
 the location defined by filepath.
-
-Other Reading
--------------
-For more information on module configuration or writing modules check the
-[docs](<docs>) folder.
