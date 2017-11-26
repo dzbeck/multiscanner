@@ -20,7 +20,6 @@ or a pull request fixing any issues found with other versions of Python.
 An installer script is included in the project [install.sh](<install.sh>), which
 installs the prerequisites on most systems.
 
-![architecture](img/arch1.png)
 
 Python API
 ----------
