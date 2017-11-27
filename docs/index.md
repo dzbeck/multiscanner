@@ -6,12 +6,14 @@ Tools can be custom built python scripts, web APIs, software running on another 
 Tools are incorporated by creating modules that run in the MultiScanner framework.
 
 Modules are designed to be quickly written and easily incorporated into the framework.
-Currently written and maintained modules are related to malware analytics, but the framework is not limited to that
-scope. For a list of modules you can look in [modules](modules), descriptions and config
+Existing modules are related to malware analytics, but the framework is not limited to that
+scope. For a list of modules, see [modules](modules), descriptions and config
 options can be found in [docs/modules.md](docs/modules.md)
+
+MultiScanner is available as open source in [GitHub](https://github.com/mitre/multiscanner/tree/feature-celery)
 
 Key Capabilities
 ----------------
 MultiScanner helps the malware analyst, tying everything together, providing integration and scaling capabilities and enabling analysis with multiple tools – both automated tools and manual tools. It allows analysts to associate metadata with samples and also allows integration of data from external sources. It’s particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
 
-![overview](../img/overview.png "Figure 1. Overview")
+![overview](img/overview.png "Figure 1. Overview")

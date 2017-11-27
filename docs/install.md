@@ -2,16 +2,13 @@ Installation
 ============
 System Requirements
 -------------------
-Python 3.6 is recommended. Compatibility with 2.7+ and
-3.4+ is supported but not as thoroughly maintained and tested. Please submit an issue
-or a pull request fixing any issues found with other versions of Python.
+Python 3.6 is recommended. Compatibility with 2.7+ and 3.4+ is supported but not as thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
-
-An installer script is included in the project [install.sh](<install.sh>), which
+An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
 installs the prerequisites on most systems.
 
-### MultiScanner ###
-If you're running on a RedHat or Debian based linux distribution you should try and run
+### Installing Ansible ###
+If you're running on a RedHat or Debian based linux distribution, try and run
 [install.sh](<install.sh>). Otherwise the required python packages are defined in
 [requirements.txt](<requirements.txt>).
 
@@ -21,7 +18,7 @@ This command can be used to rewrite the configuration file to its default state 
 if new modules have been written, to add their configuration to the configuration
 file.
 
-### Analytic Machine ###
+### Installing Analytic Machines ###
 Default modules have the option to be run locally or via SSH. The development team
 runs MultiScanner on a Linux host and hosts the majority of analytical tools on
 a separate Windows machine. The SSH server used in this environment is freeSSHd
@@ -34,42 +31,38 @@ option under `[main]` to be the mount point on the system running MultiScanner.
 Modules can have a `replacement path` option, which is the network share mount point
 on the analytic machine.
 
-Installing Ansible
-------------------
-
-Installing Analytic Machines
-----------------------------
-
 Installing Elasticsearch
 ------------------------
+Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called 'dedot' with a processor to replace dots in field names with underscores.
+
+Add the following to your elasticsearch.yml config for the dedot processor to work:
+`script.painless.regex.enabled: true`
+If planning to use the Multiscanner web UI, also add the following:
+`http.cors.enabled: true`
+`http.cors.allow-origin: "<yourOrigin>"`
 
 Module Configuration
 --------------------
-Module Writing
---------------
 Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
 configuration file does not need to be manually updated. See [docs/module\_writing.md](<docs/module_writing.md>)
 for more information.
 
-Module Configuration
---------------------
-Modules are configured within the configuration file, config.ini. See
-[docs/modules.md](<docs/modules.md>) for more information.
+Modules are configured within the configuration file, config.ini. General parameters are shown in Table X. Module-specific parameters follow for those modules that have them. See Section 2.3xx for information about all default modules.
 
-Default Modules
----------------
+###General Module Parameters###
 
-### General ###
-- **path** - This is where the executable is located
-- **cmdline** - This is an array of command line options be to passed to the executable
-- **host** - This is the hostname, port, and username of the machine that will be SSHed into to run the analytic if the executable is not present on the local machine.
-- **key** - This is the SSH key to be used to SSH into the host.
-- **replacement path** - If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted
-- **ENABLED** - When set to false the module will not run
+| Parameter | Description |
+| --------- | ----------- |
+| `path` | Location of the executable. |
+| `cmdline` | An array of command line options to be passed to the executable. |
+| `host` | The hostname, port, and username of the machine that will be SSH’d into to run the analytic if the executable is not present on the local machine.|
+| `key` | The SSH key to be used to SSH into the host. |
+| `replacement path` | If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. |
+| `ENABLED` | When set to false, the module will not run. |
 
 ### [main] ###
-This is the configuration for the main script
+This module searches virustotal for the file hash and downloads the report, if available.
 
 - **copyfilesto** - This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature
 - **group-types** - This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature
