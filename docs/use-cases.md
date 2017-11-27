@@ -1,3 +1,6 @@
+Use Cases
+=========
+
 MultiScanner is intended to be used by secure operation centers (SOCs), malware analysis centers, and other organization involved with cyber threat information (CTI) sharing. This section enumerates the associated use cases.  
 
 Scalable Malware Analysis

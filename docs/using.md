@@ -1,5 +1,5 @@
 Using MultiScanner
-------------------
+==================
 
 Default Modules
 ---------------

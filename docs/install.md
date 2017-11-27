@@ -7,7 +7,7 @@ Python 3.6 is recommended. Compatibility with 2.7+ and 3.4+ is supported but not
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
 installs the prerequisites on most systems.
 
-### Installing Ansible ###
+## Installing Ansible ##
 If you're running on a RedHat or Debian based linux distribution, try and run
 [install.sh](<install.sh>). Otherwise the required python packages are defined in
 [requirements.txt](<requirements.txt>).
@@ -18,7 +18,7 @@ This command can be used to rewrite the configuration file to its default state 
 if new modules have been written, to add their configuration to the configuration
 file.
 
-### Installing Analytic Machines ###
+## Installing Analytic Machines ##
 Default modules have the option to be run locally or via SSH. The development team
 runs MultiScanner on a Linux host and hosts the majority of analytical tools on
 a separate Windows machine. The SSH server used in this environment is freeSSHd
