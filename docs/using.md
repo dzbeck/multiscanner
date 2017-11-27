@@ -1,8 +1,9 @@
 Using MultiScanner
 ==================
+Information on default tool modules, the user interface, and the API is below.
 
-##Default Modules
-----------------
+##Default Tool Modules
+----------------------
 Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of modules currently available in MultiScanner.
 
 | AV Scans |   |
@@ -13,7 +14,6 @@ Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the 
 | Microsoft Security Essentials	| |
 | Metadefender | |
 | vtsearch | Searches VirusTotal for sample’s hash and downloads the report if available|
-
 
 | Sandbox Detonation |   |
 | ------------------ | - |
