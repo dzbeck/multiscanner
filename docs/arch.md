@@ -16,11 +16,9 @@ The workflow is as follows:
 
 2\. The Web (or REST) UI:
 
-     2a. Saves the file in the distributed file system
-	 
-     2b. Places the task on the work queue
-	 
-     2c. Posts and tracks Task ID
+2a. Saves the file in the distributed file system
+2b. Places the task on the work queue
+2c. Posts and tracks Task ID
 	 
 3\. The task manager pushes the task (filename to scan) to a worker node.
 
@@ -35,6 +33,7 @@ The workflow is as follows:
      4d. Posts analysis results to the Elasticsearch datastore
 	 
 5\. The Web (or REST) UI:
+
      5a. Gets report ID associated with the Task ID
      5b. Pulls analysis report from the Elasticsearch datastore
 
