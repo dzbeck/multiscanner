@@ -2,11 +2,11 @@ site_name: multiscannerDocs
 pages:
 - Overview: 'index.md'
 - Architecture: 'arch.md'
-- Use Cases: 'use-cases.md'
+- 'Use Cases': 'use-cases.md'
 - Installation: 'install.md'
-- Using MultiScanner: 'using.md'
-- Custom Development: 
-    - Analysis Tool Modules: 'custom/analysis-module.md'
-    - Analytic Modules: 'custom/analytic-module.md'
-    - Storage Modules: 'custom/storage-module.md'
-- Example Module: 'example.md'
+- 'Using MultiScanner': 'using.md'
+- 'Custom Development': 
+    - 'Analysis Tool Modules': 'custom/analysis-module.md'
+    - 'Analytic Modules': 'custom/analytic-module.md'
+    - 'Storage Modules': 'custom/storage-module.md'
+- 'Example Module': 'example.md'
