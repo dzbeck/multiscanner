@@ -1,8 +1,8 @@
 site_name: multiscannerDocs
 pages:
-    - Introduction: index.md
-    - Overview: 
-        - 'Architecture': 'overview/arch.md'
-        - 'Use Cases': 'overview/use-cases.md'
-    - Installation: install.md
-    - Modules: modules.md
+- Introduction: 'index.md'
+- Overview: 
+    - 'Architecture': 'overview/arch.md'
+    - 'Use Cases': 'overview/use-cases.md'
+- Installation: install.md
+- Modules: modules.md
