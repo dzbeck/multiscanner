@@ -16,6 +16,7 @@ import multiscanner
 output = multiscanner.multiscan(FileList)
 Results = multiscanner.parse_reports(output, python=True)
 ```
+
 ```Results``` is a dictionary object where each key is a filename of a scanned file.
 
 ```multiscanner.config_init(filepath)``` will create a default configuration file at
