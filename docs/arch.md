@@ -11,34 +11,28 @@ The MultiScanner workflow is shown in Figure 2. Each step is described below the
 ![architecture2](img/arch2.png "Figure 2. MultiScanner Workflow")
 
 The workflow is as follows:
-
 <ol>
 <li>The user submits a file through the Web (or REST) UI.</li>
 <li>The Web (or REST) UI:</li>
-<ol>
+<ol type="a">
 <li>Saves the file in the distributed file system</li>
 <li>Places the task on the work queue</li>
 <li>Posts and tracks Task ID</li>
 </ol>
+<li>The task manager pushes the task (filename to scan) to a worker node.</li>
+<li>The worker node:</li>
+<ol type="a">
+<li>Pulls the file from the file system</li>
+<li>Analyses the file</li>
+<li>Updates the Postgres server with the task status (“finished”) and report ID<li>
+<li>Posts analysis results to the Elasticsearch datastore<li>
 </ol>
-	 
-3\. The task manager pushes the task (filename to scan) to a worker node.
-
-4\. The worker node:
-
-4a. Pulls the file from the file system
-
-4b. Analyses the file
-
-4c. Updates the Postgres server with the task status (“finished”) and report ID
-
-4d. Posts analysis results to the Elasticsearch datastore
-	 
-5\. The Web (or REST) UI:
-
-5a. Gets report ID associated with the Task ID
-
-5b. Pulls analysis report from the Elasticsearch datastore
+<li>The Web (or REST) UI:</li>
+<ol type="a">
+<li>Gets report ID associated with the Task ID</li>
+<li>Pulls analysis report from the Elasticsearch datastore</li>
+</ol>
+</ol>
 
 Analysis Modules
 ----------------
