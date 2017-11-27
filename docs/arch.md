@@ -34,6 +34,21 @@ The workflow is as follows:
   </ol>
 </ol>
 
+1. The user submits a file through the Web (or REST) UI.</li>
+1. The Web (or REST) UI:</li>
+    1. Saves the file in the distributed file system</li>
+    1. Places the task on the work queue</li>
+    1. Posts and tracks Task ID</li>
+1. The task manager pushes the task (filename to scan) to a worker node.</li>
+1. The worker node:</li>
+    1. Pulls the file from the file system</li>
+    1. Analyses the file</li>
+    1. Updates the Postgres server with the task status (“finished”) and report ID<li>
+    1. Posts analysis results to the Elasticsearch datastore<li>
+1. The Web (or REST) UI:</li>
+    1. Gets report ID associated with the Task ID</li>
+    1. Pulls analysis report from the Elasticsearch datastore</li>
+
 Analysis Modules
 ----------------
 MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, software running on another machine, etc. 
