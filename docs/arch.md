@@ -12,15 +12,15 @@ The MultiScanner workflow is shown in Figure 2. Each step is described below the
 
 The workflow is as follows:
 
-1\. The user submits a file through the Web (or REST) UI.
-
-2\. The Web (or REST) UI:
-
-2a. Saves the file in the distributed file system
-
-2b. Places the task on the work queue
-
-2c. Posts and tracks Task ID
+<ol>
+<li>The user submits a file through the Web (or REST) UI.</li>
+<li>The Web (or REST) UI:</li>
+<ol>
+<li>Saves the file in the distributed file system</li>
+<li>Places the task on the work queue</li>
+<li>Posts and tracks Task ID</li>
+</ol>
+</ol>
 	 
 3\. The task manager pushes the task (filename to scan) to a worker node.
 
