@@ -10,29 +10,8 @@ Currently written and maintained modules are related to malware analytics, but t
 scope. For a list of modules you can look in [modules](modules), descriptions and config
 options can be found in [docs/modules.md](docs/modules.md)
 
-Requirements
-------------
-Python 3.6 is recommended. Compatibility with 2.7+ and
-3.4+ is supported but not as thoroughly maintained and tested. Please submit an issue
-or a pull request fixing any issues found with other versions of Python.
+Key Capabilities
+----------------
+MultiScanner helps the malware analyst, tying everything together, providing integration and scaling capabilities and enabling analysis with multiple tools – both automated tools and manual tools. It allows analysts to associate metadata with samples and also allows integration of data from external sources. It’s particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
 
-
-An installer script is included in the project [install.sh](<install.sh>), which
-installs the prerequisites on most systems.
-
-
-Python API
-----------
-MultiScanner can be incorporated as a module in another projects. Below is a simple
-example of how to import MultiScanner into a Python script.
-
-``` python
-import multiscanner
-output = multiscanner.multiscan(FileList)
-Results = multiscanner.parse_reports(output, python=True)
-```
-
-Results is a dictionary object where each key is a filename of a scanned file.
-
-`multiscanner.config_init(filepath)` will create a default configuration file at
-the location defined by filepath.
+![overview](../img/overview.png "Figure 1. Overview")
