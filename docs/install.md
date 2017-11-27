@@ -55,7 +55,7 @@ A finished module must be placed in the modules folder before it can be used. Th
 configuration file does not need to be manually updated. See [docs/module\_writing.md](<docs/module_writing.md>)
 for more information.
 
-Modules are configured within the configuration file, config.ini. General parameters are shown in Table X. Module-specific parameters follow for those modules that have them. See Section 2.3xx for information about all default modules.
+Modules are configured within the configuration file, config.ini. General parameters are shown in Table X. Module-specific parameters follow for those modules that have them. See [Default Modules](using.md/#Default-Modules) for information about all default modules.
 
 ###General Module Parameters###
 

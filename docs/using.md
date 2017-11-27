@@ -3,6 +3,16 @@ Using MultiScanner
 
 Default Modules
 ---------------
+Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of modules currently available in MultiScanner.
+
+| AV Scans |   |
+| -------- | - |
+| AVG 2014 | Scans sample with AVG 2014.|
+| ClamAVScan | Scans sample with ClamAV.|
+| Sandbox Detonation | Detonates the sample in a sandbox for dynamic analysis |
+| ------------------ | ------------------------------------------------------ |
+| Cuckoo Sandbox | Submits a sample to Cuckoo Sandbox cluster for analysis.|
+| FireEye API | Detoniates the sample in FireEye AX via FireEye's API. This "API" version replaces the "FireEye Scan" module.|
 
 Web User Interface
 ------------------
