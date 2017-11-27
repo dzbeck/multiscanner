@@ -24,8 +24,8 @@ The workflow is as follows:
   <ol type="a">
     <li>Pulls the file from the file system</li>
     <li>Analyses the file</li>
-    <li>Updates the Postgres server with the task status (“finished”) and report ID<li>
-    <li>Posts analysis results to the Elasticsearch datastore<li>
+    <li>Updates the Postgres server with the task status (“finished”) and report ID</li>
+    <li>Posts analysis results to the Elasticsearch datastore</li>
   </ol>
   <li>The Web (or REST) UI:</li>
   <ol type="a">
@@ -34,20 +34,21 @@ The workflow is as follows:
   </ol>
 </ol>
 
-1. The user submits a file through the Web (or REST) UI.</li>
-1. The Web (or REST) UI:</li>
-    1. Saves the file in the distributed file system</li>
-    1. Places the task on the work queue</li>
-    1. Posts and tracks Task ID</li>
-1. The task manager pushes the task (filename to scan) to a worker node.</li>
-1. The worker node:</li>
-    1. Pulls the file from the file system</li>
-    1. Analyses the file</li>
-    1. Updates the Postgres server with the task status (“finished”) and report ID<li>
-    1. Posts analysis results to the Elasticsearch datastore<li>
-1. The Web (or REST) UI:</li>
-    1. Gets report ID associated with the Task ID</li>
-    1. Pulls analysis report from the Elasticsearch datastore</li>
+The workflow is as follows:
+1. The user submits a file through the Web (or REST) UI.
+1. The Web (or REST) UI:
+    1. Saves the file in the distributed file system
+    1. Places the task on the work queue
+    1. Posts and tracks Task ID
+1. The task manager pushes the task (filename to scan) to a worker node.
+1. The worker node:
+    1. Pulls the file from the file system
+    1. Analyses the file
+    1. Updates the Postgres server with the task status (“finished”) and report ID
+    1. Posts analysis results to the Elasticsearch datastore
+1. The Web (or REST) UI:
+    1. Gets report ID associated with the Task ID
+    1. Pulls analysis report from the Elasticsearch datastore
 
 Analysis Modules
 ----------------
