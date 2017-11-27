@@ -1,4 +1,5 @@
 site_name: multiscannerDocs
+theme: readthedocs
 pages:
 - Overview: 'index.md'
 - Architecture: 'arch.md'
