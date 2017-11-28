@@ -56,7 +56,7 @@ http.cors.allow-origin: "<yourOrigin>"
 ----------------------
 Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
-configuration file does not need to be manually updated. See [Analysis Modules](custom.md#analysis-modules) for more information.
+configuration file does not need to be manually updated. See [Analysis Modules](use\use-analysis-mods.md) for more information.
 
 Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). General parameters are shown in Table X. Module-specific parameters follow for those modules that have them. See [Default Tool Modules](using.md#Default-Tool-Modules) for information about all default modules.
 
