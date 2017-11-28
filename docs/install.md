@@ -52,8 +52,7 @@ http.cors.allow-origin: "<yourOrigin>"
 ----------------------
 Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
-configuration file does not need to be manually updated. See [docs/module\_writing.md](<docs/module_writing.md>)
-for more information.
+configuration file does not need to be manually updated. See [Analysis Modules](custom.md#analysis-modules) for more information.
 
 Modules are configured within the configuration file, config.ini. General parameters are shown in Table X. Module-specific parameters follow for those modules that have them. See [Default Tool Modules](using.md#Default-Tool-Modules) for information about all default modules.
 
@@ -109,54 +108,50 @@ This module scans the file with Exif tools and returns the results.
 | **remove-entry** | A python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out. |
 
 ### [FireeyeScan] ###
-This module uses a FireEye AX to scan the files. It uses the Malware Repository feature to automatically scan files. This may not be the best way but it does work. It will copy the files to be scanned to the mounted share folders.
-*NOTE*: This module is suuuuuper slow
+This module scans a file with FireEye AX using it's Malware Repository feature. This may not be the best way but it does work. It will copy the files to be scanned to the mounted share folders. *NOTE*: This module is suuuuuper slow
 
-- **base path** - The mount point where the fireeye images folders are
-- **src folder** - The folder name where input files are put
-- **fireeye images** - A python list of the VMs in fireeye. These are used to generate where to copy the files.
-- **enabled** - True or False
-- **good path** - The folder name where good files are put
-- **cheatsheet** - Not implemented yet
-
-### [MD5] ###
-This module generates the MD5 hash of the files.
-
-### [McAfeeScan] ###
-This module scans the files with McAfee AntiVirus Command Line.
+| Parameter | Description |
+| --------- | ----------- |
+| **base path** | The mount point where the fireeye images folders are|
+| **src folder** | The folder name where input files are put|
+| **fireeye images** | A python list of the VMs in fireeye. These are used to generate where to copy the files.|
+| **enabled** | True or False|
+| **good path** | The folder name where good files are put|
+| **cheatsheet** | Not implemented yet|
 
 ### [PEFile] ###
 This module extracts out feature information from EXE files. It uses [pefile](https://code.google.com/p/pefile/) which is currently not available for python 3.
 
-### [SHA256] ###
-This module generates the SHA256 hash of the files.
-
 ### [Tika] ###
 This module extracts metadata from the file using [Tika](https://tika.apache.org/). For configuration of the module see the [tika-python](https://github.com/chrismattmann/tika-python/blob/master/README.md) documentation.
 
-- **remove-entry** - A python list of Tika results that should not be included in the report.
+| Parameter | Description |
+| --------- | ----------- |
+| **remove-entry** | A python list of Tika results that should not be included in the report.|
 
 ### [TrID] ###
-This module runs [TrID](http://mark0.net/soft-trid-e.html) against the files. The definition file should be in the same folder as the executable
+This module runs [TrID](http://mark0.net/soft-trid-e.html) against a file. The definition file must be in the same folder as the executable malware sample.
 
 ### [YaraScan] ###
-This module scans the files with yara and returns the results. You will need yara-python installed for this module.
+This module scans the files with yara and returns the results; yara-python must be installed.
 
-- **ruledir** - The directory to look for rule files in
-- **fileextensions** - A python array of all valid rule file extensions. Files not ending in one of these will be ignored.
-- **ignore-tags** - A python array of yara rule tags that will not be included in the report.
+| Parameter | Description |
+| --------- | ----------- |
+| **ruledir** | The directory to look for rule files in.|
+| **fileextensions** | A python array of all valid rule file extensions. Files not ending in one of these will be ignored.|
+| **ignore-tags** | A python array of yara rule tags that will not be included in the report.|
 
 ### [libmagic] ###
 This module runs libmagic against the files.
 
-- **magicfile** - The path to the compiled magic file you wish to use. If None it will use the default one.
+| Parameter | Description |
+| --------- | ----------- |
+| **magicfile** | The path to the compiled magic file you wish to use. If None it will use the default one.|
 
-### [pdfinfo] ###
-This module extracts out feature information from PDF files. It uses [pdf-parser](http://blog.didierstevens.com/programs/pdf-tools/)
-
-### [ssdeeper] ###
-This module generates context triggered piecewise hashes (CTPH) for the files. More information can be found on the [ssdeep website](http://ssdeep.sourceforge.net/).
 
 ### [vtsearch] ###
 This module searches [virustotal](https://www.virustotal.com/) for the files hash and download the report if available.
-- **apikey** - This is your public/private api key. You can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports
+
+| Parameter | Description |
+| --------- | ----------- |
+| **apikey** | Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.|

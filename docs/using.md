@@ -25,16 +25,16 @@ Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the 
 | -------- | - |
 |ExifToolsScan | Scans sample with Exif tools and returns the results.|
 |MD5 | Generates the MD5 hash of the sample.|
-|PEFile | Extracts features from EXE files. It uses pefile which is currently not available for Python 3. [https://code.google.com/p/pefile/]|
+|PEFile | Extracts features from EXE files.|
 |SHA1 | |
 |SHA256 | Generates the SHA256 hash of the sample.|
-|Tika | Extracts metadata from the sample using Tika.|
-|TrID | Runs TrID against the files. The definition file should be in the same folder as the executable.   [http://mark0.net/soft-trid-e.html]|
+|Tika | Extracts metadata from the sample using [Tika](https://tika.apache.org/).|
+|TrID | Runs [TrID](http://mark0.net/soft-trid-e.html) against a file.|
 |Flare FLOSS | FireEye Labs Obfuscated String Solver uses static analysis techniques to deobfuscate strings from malware binaries. [floss]|
 |libmagic | Runs libmagic against the files to identify filetype.|
 |pdfinfo | Extracts feature information from PDF files using pdf-parser [http://blog.didierstevens.com/programs/pdf-tools/].|
 |pehasher | "Computes pehash values using a variety of algorithms: totalhase, anymaster, anymaster_v1_0_1, endgame, crits, and pehashng."|
-|ssdeep | Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the ssdeep website [1xx].|
+|ssdeep | Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the [ssdeep website](http://ssdeep.sourceforge.net/).|
 
 | Signatures |   |
 | ---------- | - |
