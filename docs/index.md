@@ -6,16 +6,15 @@ Tools can be custom built python scripts, web APIs, software running on another 
 Tools are incorporated by creating modules that run in the MultiScanner framework.
 
 Modules are designed to be quickly written and easily incorporated into the framework.
-Existing modules are related to malware analytics, but the framework is not limited to that
-scope. For a list of modules, see [modules](modules), descriptions and config
-options can be found in [docs/modules.md](docs/modules.md).
+Existing modules are related to malware analytics, but the framework is not limited in
+scope. For descriptions of existing modules, see the [Using MultiScanner](using.md#default-analysis-modules) section. Module configuration options are given in the [Installation](install#module-configuration) section.
 
-MultiScanner also supports a distributed workflow for sample storage, analysis, and report viewing. This functionality includes a web interface, a REST API, a distributed file system (GlusterFS), distributed report storage / searching (ElasticSearch), and distributed task management (Celery / RabbitMQ). See the [workflow diagram](arch.md#complete-workflow).
+MultiScanner supports a distributed workflow for sample storage, analysis, and report viewing. This functionality includes a web interface, a REST API, a distributed file system (GlusterFS), distributed report storage / searching (ElasticSearch), and distributed task management (Celery / RabbitMQ). See the [workflow diagram](arch.md#complete-workflow) for details.
 
-MultiScanner is available as open source in [GitHub](https://github.com/mitre/multiscanner/tree/feature-celery)
+MultiScanner is available as open source in [GitHub](https://github.com/mitre/multiscanner/tree/feature-celery).
 
 Key Capabilities
 ----------------
-MultiScanner helps the malware analyst, tying everything together, providing integration and scaling capabilities and enabling analysis with multiple tools – both automated tools and manual tools. It allows analysts to associate metadata with samples and also allows integration of data from external sources. It’s particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
+MultiScanner helps the malware analyst, enabling analysis with automated tools and manual tools, providing integration and scaling capabilities, and corrolating analysis results. It allows analysts to associate metadata with samples and also allows integration of data from external sources. MultiScanner is particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
 
-![overview](img/overview.png "Figure 1. Overview")
+![overview](img/overview.png "Overview")

@@ -6,7 +6,7 @@ The MultiScanner architecture is shown in the figure below. Task management comp
 
 Complete Workflow
 -----------------
-Each step of the MultiScanner workflow is shown below the figure.
+Each step of the MultiScanner workflow is described below the figure.
 
 ![architecture2](img/arch2.png "MultiScanner Workflow")
 

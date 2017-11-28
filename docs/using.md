@@ -1,6 +1,6 @@
 Using MultiScanner
 ==================
-Information on default tool modules, the user interface, and the API is below.
+Information on default analysis modules, the user interface, and the API is below.
 
 ##Default Analysis Modules
 ----------------------
