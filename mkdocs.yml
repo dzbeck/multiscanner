@@ -1,5 +1,5 @@
 site_name: multiscannerDocs
-theme: readthedocs
+theme: mkdocs
 pages:
 - Overview: 'index.md'
 - Architecture: 'arch.md'
