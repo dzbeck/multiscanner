@@ -20,9 +20,7 @@ PostgreSQL is our task management database. It is here that we keep track of sca
 GlusterFS is our distributed file system. Each component that needs access to the raw samples mounts the share via FUSE. We selected GlusterFS because it is much more performant in our use case of storing a large number of small samples than a technology like HDFS would be.
 
 - **Worker Nodes**  
-The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). Worker nodes will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan. These figures are configurable.
-
-  All worker nodes (Celery clients) have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
+The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). A worker node will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan (these values are configurable). All worker nodes have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
 
 - **Report Storage**  
 We use ElasticSearch to store the results of our file scans. This is where the true power of this system comes in. ElasticSearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
@@ -39,7 +37,7 @@ Each step of the MultiScanner workflow is described below the diagram.
   b\. &nbsp; Places the task on the task queue (Celery)  
   c\. &nbsp; Adds an entry to the task management database (PostgreSQL)  
 1. ~~The task manager pushes the task (filename to scan) to a worker node.~~
-1. A worker node:  [**if this is correct, need to update diagram**]
+1. A worker node:  [**if this is correct, need to update diagram**]  
   a\. &nbsp; Pulls the task from the Celery task queue  
   b\. &nbsp; Retrieves the corresponding sample file from the GlusterFS via its SHA256 value  
   c\. &nbsp; Analyses the file  
@@ -60,8 +58,7 @@ Enabling analytics and advanced queries is the primary advantage of running
 several tools against a sample, extracting as much information as possible, and
 storing the output in a common datastore.
 
-The following are some example types of analytics and queries that may be of
-interest:
+The following are examples of analytics and queries:
 
 - cluster samples
 - outlier samples

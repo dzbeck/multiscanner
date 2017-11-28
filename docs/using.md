@@ -1,4 +1,22 @@
-Information on current analysis modules, the user interface, and the API is below.
+Usage information on the web user interface and the REST API is below. We also provide information on currently available analysis modules and analytics.
+
+##Web User Interface
+--------------------
+
+##API
+-----
+Via its RESTful API, MultiScanner can be incorporated as a module in another project. Below is a simple example of how to import MultiScanner into a Python script.
+
+``` python
+import multiscanner
+output = multiscanner.multiscan(FileList)
+Results = multiscanner.parse_reports(output, python=True)
+```
+
+```Results``` is a dictionary object where each key is a filename of a scanned file.
+
+```multiscanner.config_init(filepath)``` will create a default configuration file at
+the location defined by filepath.
 
 ##Current Analysis Modules
 ----------------------
@@ -42,7 +60,7 @@ Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the 
 ##Current Analytics
 -------------------
 
-## ssdeep Comparison ##
+- **ssdeep Comparison**
 Fuzzy hashing is an effective method to identify similar files based on common
 byte strings despite changes in the byte order and strcuture of the files.
 [ssdeep](https://ssdeep-project.github.io/ssdeep/index.html) provides a fuzzy
@@ -55,7 +73,7 @@ The ssdeep analytic computes ```ssdeep.compare``` for all samples where the
 result is non-zero and provides the capability to return all samples clustered
 based on the ssdeep hash.
 
-- Elasticsearch 
+  - *Elasticsearch*  
 When possible, it can be effective to push work to the Elasticsearch cluster
 which support horizontal scaling. For the ssdeep comparison, Elasticsearch 
 [NGram  Tokenizers](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenizer.html)
@@ -63,32 +81,14 @@ are used to compute 7-grams of the chunk and double-chunk portions
 of the ssdeep hash as described here [[2]](http://www.intezer.com/intezer-community-tip-ssdeep-comparisons-with-elasticsearch/).
 This prevents ever comparing two ssdeep hashes where the result will be zero.
 
-- Python 
+  - *Python*  
 Because we need to compute ```ssdeep.compare```, the ssdeep analytic cannot be
 done entirely in Elasticsearch. Python is used to query Elasicsearch, compute
 ```ssdeep.compare``` on the results, and update the documents in Elasticsearch.
 
-- Deployment 
+  - *Deployment*  
 [celery beat](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html)
 is used to schedule and kick off the ssdeep comparison task nightly at 2am
 local time, when the system is experiencing less load from users. This ensures
 that the analytic will be run on all samples without adding an exorbinant load
 to the system.
-
-##Web User Interface
---------------------
-
-##API
------
-Via its RESTful API, MultiScanner can be incorporated as a module in another project. Below is a simple example of how to import MultiScanner into a Python script.
-
-``` python
-import multiscanner
-output = multiscanner.multiscan(FileList)
-Results = multiscanner.parse_reports(output, python=True)
-```
-
-```Results``` is a dictionary object where each key is a filename of a scanned file.
-
-```multiscanner.config_init(filepath)``` will create a default configuration file at
-the location defined by filepath.
