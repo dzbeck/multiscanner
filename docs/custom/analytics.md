@@ -1,3 +1,3 @@
-# Developing Analytics
+# Developing an Analytic
 
 How are analytics developed...?
