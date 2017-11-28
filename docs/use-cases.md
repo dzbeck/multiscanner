@@ -3,13 +3,13 @@ Use Cases
 
 MultiScanner is intended to be used by secure operation centers (SOCs), malware analysis centers, and other organization involved with cyber threat information (CTI) sharing. This section outlines associated use cases.  
 
-Scalable Malware Analysis
+##Scalable Malware Analysis
 -------------------------
 Every component of MultiScanner is designed with scaling in mind. 
 
 However, scaling required for external analysis tools such as Cuckoo Sandbox is beyond the scope of MultiScanner code, as is auto-scaling (e.g., scaling required to auto-provision virtual machines). New worker nodes must be deployed manually and added to the Ansible playbook for proper configuration (see [Installing Analytic Machines](install.md#installing-analytic-machines)).
 
-Manual Malware Analysis
+##Manual Malware Analysis
 -----------------------
 Manual malware analysis is supported via modules.
 
