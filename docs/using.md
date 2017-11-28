@@ -1,8 +1,5 @@
 Information on current analysis modules, the user interface, and the API is below.
 
-##Docker
---------
-
 ##Current Analysis Modules
 ----------------------
 Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of analysis modules currently available in MultiScanner.
