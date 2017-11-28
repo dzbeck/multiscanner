@@ -63,46 +63,50 @@ Modules are configured within the configuration file, config.ini. General parame
 | --------- | ----------- |
 | **path** | Location of the executable. |
 | **cmdline** | An array of command line options to be passed to the executable. |
-| host | The hostname, port, and username of the machine that will be SSH’d into to run the analytic if the executable is not present on the local machine.|
-| key | The SSH key to be used to SSH into the host. |
-| replacement path | If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. |
-| `ENABLED` | When set to false, the module will not run. |
+| **host** | The hostname, port, and username of the machine that will be SSH’d into to run the analytic if the executable is not present on the local machine.|
+| **key** | The SSH key to be used to SSH into the host. |
+| **replacement path** | If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. |
+| **ENABLED** | When set to false, the module will not run. |
 
 ## Specific Module Parameters
+Parameters for specific modules are given below. Modules without parameters are not listed. See [Modules](using.md#tool-modules) for a list of all analysis modules.
+
 ### [main] ###
 This module searches virustotal for the file hash and downloads the report, if available.
 
-- **copyfilesto** - This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature
-- **group-types** - This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature
-
-### [AVGScan] ###
-This module scans a file with AVG 2014 anti-virus.
-
-### [ClamAVScan] ###
-This module scans a file with ClamAV.
+| Parameter | Description |
+| --------- | ----------- |
+| **copyfilesto** | This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.|
+| **group-types** | This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.|
 
 ### [Cuckoo] ###
 This module submits a file to a Cuckoo Sandbox cluster for analysis
 
-- **API URL** - This is the URL to the API server
-- **timeout** - This is max time a sample with run for
-- **running timeout** - This is an additional timeout, if a task is in the running state this many seconds past **timeout** we will consider the task failed.
-- **delete tasks** - When set to True, tasks will be deleted from cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.
-- **maec** - When set to True, [MAEC](https://maecproject.github.io) JSON report is added to Cuckoo JSON report. *NOTE*: Cuckoo needs MAEC reporting enabled to produce results.
+| Parameter | Description |
+| --------- | ----------- |
+| **API URL** | The URL to the API server.|
+| **timeout** | The maximum time a sample will run.|
+| **running timeout** | An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.|
+| **delete tasks** | When set to True, tasks will be deleted from Cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.|
+| **maec** | When set to True, a [MAEC](https://maecproject.github.io) JSON-based report is added to Cuckoo JSON report. *NOTE*: Cuckoo needs MAEC reporting enabled to produce results.|
 
 ### [VxStream] ###
 This module submits a file to a VxStream Sandbox cluster for analysis
 
-- **API URL** - This is the URL to the API server (include the /api/ in this URL)
-- **API Key** - This is the user's API key to the API server
-- **API Secret** - This is the user's secret to the API server
-- **timeout** - This is max time a sample with run for
-- **running timeout** - This is an additional timeout, if a task is in the running state this many seconds past **timeout** we will consider the task failed.
+| Parameter | Description |
+| --------- | ----------- |
+| **API URL** | The URL to the API server (include the /api/ in this URL).|
+| **API Key** | The user's API key to the API server.|
+| **API Secret** | The user's secret to the API server.|
+| **timeout** | The maximum time a sample will run|
+| **running timeout** | An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.|
 
 ### [ExifToolsScan] ###
 This module scans the file with Exif tools and returns the results.
 
-- **remove-entry** - A python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out 
+| Parameter | Description |
+| --------- | ----------- |
+| **remove-entry** | A python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out. |
 
 ### [FireeyeScan] ###
 This module uses a FireEye AX to scan the files. It uses the Malware Repository feature to automatically scan files. This may not be the best way but it does work. It will copy the files to be scanned to the mounted share folders.

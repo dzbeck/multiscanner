@@ -6,7 +6,7 @@ pages:
 - Installation: 'install.md'
 - Using MultiScanner: 'using.md'
 - Custom Development: 
-    - 'Analysis Tool Modules': 'custom/analysis-module.md'
+    - 'Analysis Modules': 'custom/analysis-module.md'
     - 'Analytic Modules': 'custom/analytic-module.md'
     - 'Storage Modules': 'custom/storage-module.md'
 - Example Module: 'example.md'
