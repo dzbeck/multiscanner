@@ -56,8 +56,8 @@ configuration file does not need to be manually updated. See [Analysis Modules](
 
 Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). General parameters are shown in Table X. Module-specific parameters follow for those modules that have them. See [Default Tool Modules](using.md#Default-Tool-Modules) for information about all default modules.
 
-##Common Module Parameters
-The parameters below are potentially used by all modules.
+##Common Parameters
+The parameters below may be used by all modules.
 
 | Parameter | Description |
 | --------- | ----------- |
@@ -78,7 +78,7 @@ This module searches virustotal for a file hash and downloads the report, if ava
 | **group-types** | This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.|
 
 ## Parameters of Analysis Modules
-Modules with parameters in addition to common parameters (see [above](#common-module-parameters)) are given below. See [Modules](using.md#tool-modules) for a list of all analysis modules.
+Analysis modules with additional parameters are given below in alphabetical order. See [Modules](using.md#tool-modules) for a list of all current analysis modules.
 
 ### [Cuckoo]  
 This module submits a file to a Cuckoo Sandbox cluster for analysis
