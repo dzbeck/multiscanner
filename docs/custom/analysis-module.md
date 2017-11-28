@@ -1,3 +1,5 @@
+# Developing an Analysis Module
+
 Modules are intended to be easily written and incorporated into the MultiScanner framework. A finished module must be in the modules folder for it to be used on the next run.
 
 Modules are intended to be quickly written and incorporated into the MultiScanner framework. A finished module must be placed in the modules folder before it can be used. The configuration file does not need to be manually updated.
@@ -44,7 +46,7 @@ The module interface is a class that is put into each module as it is run. This 
 * `apply_async(func, args=(), kwds={}, callback=None)` - This mirrors multiprocessing.Pool.apply_async and returns a [multiprocessing.pool.AsyncResult](https://docs.python.org/2/library/multiprocessing.html#multiprocessing.pool.AsyncResult). The pool is shared by all modules.
 * `scan_file(file_path, from_filename)` - This will scan a file that was found inside another file. `file_path` should be the extracted file on the filesystem (you can write it in path at `multiscanner.write_dir`). `from_filename` is the file it was extracted from.
 
-## Config ##
+## Configuration ##
 If a module requires configuration, the DEFAULTCONF global variable must be defined. This variable is passed to both check() and scan(). The configuration will be read from the configuration file if it is present. If the file is not present, it will be written into the configuration file.
 
 If `replacement path` is set in the configuration, the module will receive file names, with the folder path replaced with the variable's value. This is useful for analytics which are run on a remote machine.
