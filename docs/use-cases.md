@@ -17,5 +17,7 @@ Malware analysis results can be enriched it in support of cyber threat intellige
 ##Data Analytics
 Analytics can be performed on malware samples either by interacting with the Elasticsearch datastore or via the web/REST UI. 
 Two clustering analytics are currently available:
+
 * ssdeep
+
 * pehash

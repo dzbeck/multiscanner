@@ -1,6 +1,6 @@
 #System Requirements
 --------------------
-Python 3.6 is recommended. Compatibility with 2.7+ and 3.4+ is supported but not as thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
+Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
 installs the prerequisites on most systems.
@@ -12,7 +12,7 @@ If you're running on a RedHat or Debian based linux distribution, try and run
 [requirements.txt](https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt).
 
 MultiScanner must have a configuration file to run. Generate the MultiScanner default
-configuration by running ``` python multiscanner.py init ``` after cloning the repository.
+configuration by running `python multiscanner.py init` after cloning the repository.
 This command can be used to rewrite the configuration file to its default state or,
 if new modules have been written, to add their configuration to the configuration
 file.
@@ -37,7 +37,7 @@ Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) cha
 
 Add the following to your elasticsearch.yml config for the dedot processor to work:
 
-```
+```python
 script.painless.regex.enabled: true
 ```
 
