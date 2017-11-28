@@ -19,7 +19,7 @@ the location defined by filepath.
 
 #Current Analysis Modules
 
-Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of analysis modules currently available in MultiScanner.
+The set of analysis modules currently available in MultiScanner are listed below.
 
 | AV Scans |   |
 | -------- | - |

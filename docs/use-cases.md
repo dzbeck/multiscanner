@@ -20,4 +20,4 @@ Two clustering analytics are currently available:
 
 * ssdeep
 
-* pehash
+* *pehash (available yet?)*
