@@ -14,18 +14,18 @@ The workflow is as follows:
 
 1. The user submits a file through the Web (or REST) UI.
 1. The Web (or REST) UI:  
-  a\. Saves the file in the distributed file system  
-  b\. Places the task on the work queue  
-  c\. Posts and tracks Task ID  
+  a\.  Saves the file in the distributed file system  
+  b\.  Places the task on the work queue  
+  c\.  Posts and tracks Task ID  
 1. The task manager pushes the task (filename to scan) to a worker node.
 1. The worker node:  
-  a\. Pulls the file from the file system  
-  b\. Analyses the file  
-  c\. Updates the Postgres server with the task status (“finished”) and report ID  
-  d\. Posts analysis results to the Elasticsearch datastore  
+  a\.  Pulls the file from the file system  
+  b\.  Analyses the file  
+  c\.  Updates the Postgres server with the task status (“finished”) and report ID  
+  d\.  Posts analysis results to the Elasticsearch datastore  
 1. The Web (or REST) UI:  
-  a\. Gets report ID associated with the Task ID  
-  b\. Pulls analysis report from the Elasticsearch datastore  
+  a\.  Gets report ID associated with the Task ID  
+  b\.  Pulls analysis report from the Elasticsearch datastore  
 
 Analysis Modules
 ----------------
