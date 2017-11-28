@@ -1,6 +1,3 @@
-Tool Modules
-============
-
 Modules are intended to be easily written and incorporated into the MultiScanner framework. A finished module must be in the modules folder for it to be used on the next run.
 
 Modules are intended to be quickly written and incorporated into the MultiScanner framework. A finished module must be placed in the modules folder before it can be used. The configuration file does not need to be manually updated.

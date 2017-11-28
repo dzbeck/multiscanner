@@ -17,7 +17,7 @@ Results = multiscanner.parse_reports(output, python=True)
 ```multiscanner.config_init(filepath)``` will create a default configuration file at
 the location defined by filepath.
 
-#Current Analysis Modules
+##Current Analysis Modules
 
 The set of analysis modules currently available in MultiScanner are listed below.
 
@@ -56,7 +56,8 @@ The set of analysis modules currently available in MultiScanner are listed below
 | ---------- | - |
 | YaraScan | Scans the sample with Yara and returns the results.|
 
-#Current Analytics
+##Current Analytics
+
 ### [ssdeep]
 
 Fuzzy hashing is an effective method to identify similar files based on common byte strings despite changes in the byte order and structure of the files. [ssdeep](https://ssdeep-project.github.io/ssdeep/index.html) provides a fuzzy hash implementation and provides the capability to compare hashes. The [Virus Bulletin](https://www.virusbulletin.com/virusbulletin/2015/11/optimizing-ssdeep-use-scale/) originally described a method for comparing ssdeep hashes at scale. 
