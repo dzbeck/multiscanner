@@ -1,8 +1,9 @@
-Using MultiScanner
-==================
-Information on default analysis modules, the user interface, and the API is below.
+Information on current analysis modules, the user interface, and the API is below.
 
-##Default Analysis Modules
+##Docker
+--------
+
+##Current Analysis Modules
 ----------------------
 Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of analysis modules currently available in MultiScanner.
 
@@ -18,7 +19,7 @@ Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the 
 | Sandbox Detonation |   |
 | ------------------ | - |
 | Cuckoo Sandbox | Submits a sample to Cuckoo Sandbox cluster for analysis.|
-| FireEye API | Detoniates the sample in FireEye AX via FireEye's API. This "API" version replaces the "FireEye Scan" module.|
+| FireEye API | Detonates the sample in FireEye AX via FireEye's API.|
 | VxStream | Submits a file to a VxStream Sandbox cluster for analysis.|
 
 | Metadata |   |
@@ -32,6 +33,7 @@ Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the 
 |TrID | Runs [TrID](http://mark0.net/soft-trid-e.html) against a file.|
 |Flare FLOSS | FireEye Labs Obfuscated String Solver uses static analysis techniques to deobfuscate strings from malware binaries. [floss]|
 |libmagic | Runs libmagic against the files to identify filetype.|
+|Metadefender | Runs Metadefender against a file.|
 |pdfinfo | Extracts feature information from PDF files using pdf-parser [http://blog.didierstevens.com/programs/pdf-tools/].|
 |pehasher | "Computes pehash values using a variety of algorithms: totalhase, anymaster, anymaster_v1_0_1, endgame, crits, and pehashng."|
 |ssdeep | Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the [ssdeep website](http://ssdeep.sourceforge.net/).|

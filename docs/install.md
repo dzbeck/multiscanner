@@ -5,6 +5,8 @@ Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
 installs the prerequisites on most systems.
 
+Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. If you'd like to get an idea of how the system works without having to go through the full process of setting up the distributed architecture, look into our [docker containers](using.md#docker) for a standalone system. Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
+
 # Installing Ansible
 --------------------
 If you're running on a RedHat or Debian based linux distribution, try and run
@@ -37,7 +39,7 @@ Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) cha
 
 Add the following to your elasticsearch.yml config for the dedot processor to work:
 
-```python
+```
 script.painless.regex.enabled: true
 ```
 
@@ -76,6 +78,9 @@ This module searches virustotal for a file hash and downloads the report, if ava
 | --------- | ----------- |
 | **copyfilesto** | This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.|
 | **group-types** | This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.|
+| **storage-config** | |
+| **api-config** | |
+| **web-config** | |
 
 ## Parameters of Analysis Modules
 Analysis modules with additional parameters are given below in alphabetical order. See [Modules](using.md#tool-modules) for a list of all current analysis modules.
@@ -86,6 +91,7 @@ This module submits a file to a Cuckoo Sandbox cluster for analysis
 | Parameter | Description |
 | --------- | ----------- |
 | **API URL** | The URL to the API server.|
+| **WEB URL** | |
 | **timeout** | The maximum time a sample will run.|
 | **running timeout** | An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.|
 | **delete tasks** | When set to True, tasks will be deleted from Cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.|
@@ -98,17 +104,24 @@ This module scans the file with Exif tools and returns the results.
 | --------- | ----------- |
 | **remove-entry** | A python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out. |
 
-### [FireeyeScan] ###
-This module scans a file with FireEye AX using it's Malware Repository feature. This may not be the best way but it does work. It will copy the files to be scanned to the mounted share folders. *NOTE*: This module is suuuuuper slow
+### [FireeyeAPI] ###
+Detonates the sample in FireEye AX via FireEye's API. This "API" version replaces the "FireEye Scan" module.
 
 | Parameter | Description |
 | --------- | ----------- |
-| **base path** | The mount point where the fireeye images folders are|
-| **src folder** | The folder name where input files are put|
+| **API URL** | The URL to the API server.|
 | **fireeye images** | A python list of the VMs in fireeye. These are used to generate where to copy the files.|
-| **enabled** | True or False|
-| **good path** | The folder name where good files are put|
-| **cheatsheet** | Not implemented yet|
+| **username** | username on the FireEye AX. | 
+| **password** | password for the FireEye AX. |
+| **info level** | |
+| **timeout** | |
+| **force** | |
+| **analysis type** | | 
+| **application id** | |
+
+| Parameter | Description |
+| --------- | ----------- |
+| **magicfile** | The path to the compiled mag
 
 ### [libmagic] ###
 This module runs libmagic against the files.
@@ -127,6 +140,14 @@ This module runs Metadefender against the files.
 | **fetch delay seconds** | |
 | **poll interval** | |
 | **user agent** | |
+
+### [NSRL] ###
+This module looks up hashes in the NSRL database.
+
+| Parameter | Description |
+| --------- | ----------- |
+| **hash_list** | |
+| **offsets** | |  
 
 ### [PEFile] ###
 This module extracts out feature information from EXE files. It uses [pefile](https://code.google.com/p/pefile/) which is currently not available for python 3.
@@ -153,9 +174,12 @@ This module submits a file to a VxStream Sandbox cluster for analysis
 
 | Parameter | Description |
 | --------- | ----------- |
+| **BASE URL** | |
 | **API URL** | The URL to the API server (include the /api/ in this URL).|
 | **API Key** | The user's API key to the API server.|
 | **API Secret** | The user's secret to the API server.|
+| **Environment ID** | |
+| **Verify** | |
 | **timeout** | The maximum time a sample will run|
 | **running timeout** | An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.|
 

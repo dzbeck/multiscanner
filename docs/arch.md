@@ -1,26 +1,57 @@
 High-level Architecture
 -----------------------
-The MultiScanner architecture is shown in the figure below. Task management components (Celery/RabbitMQ Server and PostgreSQL Server) provide task assignment and tracking. Data storage is available for both malware samples (GlusterFS) and analysis results (Elasticsearch). Worker nodes execute tasks. Note that worker nodes are co-located with the distributed file system for improved performance.
+Details on the components of the MultiScanner architecture are given below the diagram. 
 
 ![architecture1](img/arch1.png "MultiScanner Architecture")
 
+###Web Frontend
+
+The web application runs on [Flask](http://flask.pocoo.org/), uses [Bootstrap](https://getbootstrap.com/) and [jQuery](https://jquery.com/), and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.
+
+###REST API
+
+The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database in order to facilitate task tracking. Additionally, it acts as a gateway to the backend ElasticSearch document store. Searches entered into the web UI will be routed through the REST API and passed to the ElasticSearch cluster. This abstracts the complexity of querying ElasticSearch and gives the user a simple web interface to work with.
+
+###Task Queue
+
+We use Celery as our distributed task queue.
+
+###Task Tracking
+
+PostgreSQL is our task management database. It is here that we keep track of scan times, samples, and the status of tasks (pending, complete, failed).
+
+###Distributed File System
+
+GlusterFS is our distributed file system. Each component that needs access to the raw samples mounts the share via FUSE. We selected GlusterFS because it is much more performant in our use case of storing a large number of small samples than a technology like HDFS would be.
+
+###Worker Nodes
+
+The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). Worker nodes will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan. These figures are configurable.
+
+All worker nodes (Celery clients) have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
+
+###Report Storage
+
+We use ElasticSearch to store the results of our file scans. This is where the true power of this system comes in. ElasticSearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
+
 Complete Workflow
 -----------------
-Each step of the MultiScanner workflow is described below the figure.
+Each step of the MultiScanner workflow is described below the diagram.
 
 ![architecture2](img/arch2.png "MultiScanner Workflow")
 
-1. The user submits a file through the Web (or REST) UI.
-1. The Web (or REST) UI:  
-  a\. &nbsp; Saves the file in the distributed file system  
-  b\. &nbsp; Places the task on the work queue  
-  c\. &nbsp; Posts and tracks Task ID  
+1. The user submits a sample file through the Web UI or the REST UI.
+1. The Web US or REST UI:  
+  a\. &nbsp; Saves the file in the distributed file system (GlusterFS)   
+  b\. &nbsp; Places the task on the task queue (Celery)  
+  c\. &nbsp; Adds an entry to the task management database (PostgreSQL)  
 1. The task manager pushes the task (filename to scan) to a worker node.
-1. The worker node:  
-  a\. &nbsp; Pulls the file from the file system  
-  b\. &nbsp; Analyses the file  
-  c\. &nbsp; Updates the Postgres server with the task status (“finished”) and report ID  
-  d\. &nbsp; Posts analysis results to the Elasticsearch datastore  
+1. One of the worker nodes:  
+  a\. &nbsp; Pulls the task from the Celery task queue  
+  b\. &nbsp; Retrieves the corresponding sample file from the GlusterFS via its SHA256 value  
+  c\. &nbsp; Analyses the file  
+  d\. &nbsp; Generates a JSON blob and indexes it into Elasticsearch  
+  e\. &nbsp; Updates the task management database with the task status ("complete")      
 1. The Web (or REST) UI:  
   a\. &nbsp; Gets report ID associated with the Task ID  
   b\. &nbsp; Pulls analysis report from the Elasticsearch datastore  
@@ -28,11 +59,56 @@ Each step of the MultiScanner workflow is described below the figure.
 Analysis Modules
 ----------------
 MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, or software applications running on different machines. 
-Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Details are provided in the [Using MultiScanner](using#default-analysis-modules) section.
+Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Modules can be enabled/disabled via a configuration file. Details are provided in the [Using MultiScanner](using#default-analysis-modules) section.
 
 Analytics
 ---------
-MultiScanner enables analytics to be run across its database. Currently, there is one analytic based on ssdeep hashes, which identify clusters of similar samples.
+Enabling analytics and advanced queries is the primary advantage of running 
+several tools against a sample, extracting as much information as possible, and
+storing the output in a common datastore.
+
+The following are some example types of analytics and queries that may be of
+interest:
+
+- cluster samples
+- outlier samples
+- samples for deep-dive analysis
+- gaps in current toolset
+- machine learning analytics on tool outputs
+- others
+
+## ssdeep Comparison ##
+Fuzzy hashing is an effective method to identify similar files based on common
+byte strings despite changes in the byte order and strcuture of the files.
+[ssdeep](https://ssdeep-project.github.io/ssdeep/index.html) provides a fuzzy
+hash implementation and provides the capability to compare hashes.
+
+Comparing ssdeep hashes at scale is a challenge. [[1]](https://www.virusbulletin.com/virusbulletin/2015/11/optimizing-ssdeep-use-scale/)
+originally described a method for comparing ssdeep hashes at scale.
+
+The ssdeep analytic computes ```ssdeep.compare``` for all samples where the
+result is non-zero and provides the capability to return all samples clustered
+based on the ssdeep hash.
+
+### Elasticsearch ###
+When possible, it can be effective to push work to the Elasticsearch cluster
+which support horizontal scaling. For the ssdeep comparison, Elasticsearch 
+[NGram  Tokenizers](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenizer.html)
+are used to compute 7-grams of the chunk and double-chunk portions
+of the ssdeep hash as described here [[2]](http://www.intezer.com/intezer-community-tip-ssdeep-comparisons-with-elasticsearch/).
+This prevents ever comparing two ssdeep hashes where the result will be zero.
+
+### Python ###
+Because we need to compute ```ssdeep.compare```, the ssdeep analytic cannot be
+done entirely in Elasticsearch. Python is used to query Elasicsearch, compute
+```ssdeep.compare``` on the results, and update the documents in Elasticsearch.
+
+### Deployment ###
+[celery beat](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html)
+is used to schedule and kick off the ssdeep comparison task nightly at 2am
+local time, when the system is experiencing less load from users. This ensures
+that the analytic will be run on all samples without adding an exorbinant load
+to the system.
 
 Reporting
 ---------
