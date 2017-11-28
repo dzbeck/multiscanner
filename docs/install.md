@@ -68,8 +68,8 @@ The parameters below are potentially used by all modules.
 | **replacement path** | If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. |
 | **ENABLED** | When set to false, the module will not run. |
 
-##Core Module Parameters
-### [main] ###
+##Parameters of Core Modules
+### [main]  
 This module searches virustotal for a file hash and downloads the report, if available.
 
 | Parameter | Description |
@@ -77,10 +77,10 @@ This module searches virustotal for a file hash and downloads the report, if ava
 | **copyfilesto** | This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.|
 | **group-types** | This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.|
 
-## Analysis Module Parameters
+## Parameters of Analysis Modules
 Modules with parameters in addition to common parameters (see [above](#common-module-parameters)) are given below. See [Modules](using.md#tool-modules) for a list of all analysis modules.
 
-### [Cuckoo] ###
+### [Cuckoo]  
 This module submits a file to a Cuckoo Sandbox cluster for analysis
 
 | Parameter | Description |
