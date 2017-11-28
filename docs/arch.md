@@ -27,12 +27,12 @@ Each step of the MultiScanner workflow is described below the figure.
 
 Analysis Modules
 ----------------
-MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, software running on another machine, etc. 
-Analysis tools are incorporated by creating modules that run in the MultiScanner framework. Catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Details are provided in the [Using MultiScanner](using#default-analysis-modules) section.
+MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, or software applications running on different machines. 
+Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Details are provided in the [Using MultiScanner](using#default-analysis-modules) section.
 
 Analytics
 ---------
-MultiScanner enables analytics to be run across its database. To date, there is one analytic based on ssdeep hashes, which identify clusters of similar samples.
+MultiScanner enables analytics to be run across its database. Currently, there is one analytic based on ssdeep hashes, which identify clusters of similar samples.
 
 Reporting
 ---------
