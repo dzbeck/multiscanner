@@ -9,10 +9,10 @@ installs the prerequisites on most systems.
 --------------------
 If you're running on a RedHat or Debian based linux distribution, try and run
 [install.sh](<install.sh>). Otherwise the required python packages are defined in
-[requirements.txt](<requirements.txt>).
+[requirements.txt](https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt).
 
 MultiScanner must have a configuration file to run. Generate the MultiScanner default
-configuration by running ```python multiscanner.py init``` after cloning the repository.
+configuration by running ``` python multiscanner.py init ``` after cloning the repository.
 This command can be used to rewrite the configuration file to its default state or,
 if new modules have been written, to add their configuration to the configuration
 file.
