@@ -4,27 +4,27 @@ Details on the components of the MultiScanner architecture are given below the d
 
 ![architecture1](img/arch1.png "MultiScanner Architecture")
 
-- Web Frontend  
+- **Web Frontend**  
 The web application runs on [Flask](http://flask.pocoo.org/), uses [Bootstrap](https://getbootstrap.com/) and [jQuery](https://jquery.com/), and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.
 
-- REST API  
+- **REST API**  
 The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database in order to facilitate task tracking. Additionally, it acts as a gateway to the backend ElasticSearch document store. Searches entered into the web UI will be routed through the REST API and passed to the ElasticSearch cluster. This abstracts the complexity of querying ElasticSearch and gives the user a simple web interface to work with.
 
-- Task Queue  
+- **Task Queue**  
 We use Celery as our distributed task queue.
 
-- Task Tracking  
+- **Task Tracking**  
 PostgreSQL is our task management database. It is here that we keep track of scan times, samples, and the status of tasks (pending, complete, failed).
 
-- Distributed File System  
+- **Distributed File System**  
 GlusterFS is our distributed file system. Each component that needs access to the raw samples mounts the share via FUSE. We selected GlusterFS because it is much more performant in our use case of storing a large number of small samples than a technology like HDFS would be.
 
-- Worker Nodes  
+- **Worker Nodes**  
 The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). Worker nodes will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan. These figures are configurable.
 
-All worker nodes (Celery clients) have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
+  All worker nodes (Celery clients) have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
 
-- Report Storage  
+- **Report Storage**  
 We use ElasticSearch to store the results of our file scans. This is where the true power of this system comes in. ElasticSearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
 
 Complete Workflow
@@ -33,19 +33,19 @@ Each step of the MultiScanner workflow is described below the diagram.
 
 ![architecture2](img/arch2.png "MultiScanner Workflow")
 
-1. The user submits a sample file through the Web UI or the REST UI.
-1. The Web US or REST UI:  
-  a\. &nbsp; Saves the file in the distributed file system (GlusterFS)   
+1. The user submits a sample file through the Web UI (or REST UI).
+1. The Web UI (or REST UI):  
+  a\. &nbsp; Stores the file in the distributed file system (GlusterFS)   
   b\. &nbsp; Places the task on the task queue (Celery)  
   c\. &nbsp; Adds an entry to the task management database (PostgreSQL)  
-1. The task manager pushes the task (filename to scan) to a worker node.
-1. One of the worker nodes:  
+1. ~~The task manager pushes the task (filename to scan) to a worker node.~~
+1. A worker node:  [**if this is correct, need to update diagram**]
   a\. &nbsp; Pulls the task from the Celery task queue  
   b\. &nbsp; Retrieves the corresponding sample file from the GlusterFS via its SHA256 value  
   c\. &nbsp; Analyses the file  
   d\. &nbsp; Generates a JSON blob and indexes it into Elasticsearch  
   e\. &nbsp; Updates the task management database with the task status ("complete")      
-1. The Web (or REST) UI:  
+1. The Web UI (or REST UI):  
   a\. &nbsp; Gets report ID associated with the Task ID  
   b\. &nbsp; Pulls analysis report from the Elasticsearch datastore  
 
