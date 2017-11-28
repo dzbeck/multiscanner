@@ -1,13 +1,11 @@
-Installation
-============
-System Requirements
--------------------
+#System Requirements
+--------------------
 Python 3.6 is recommended. Compatibility with 2.7+ and 3.4+ is supported but not as thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
 installs the prerequisites on most systems.
 
-## Installing Ansible ##
+## Installing Ansible
 If you're running on a RedHat or Debian based linux distribution, try and run
 [install.sh](<install.sh>). Otherwise the required python packages are defined in
 [requirements.txt](<requirements.txt>).
@@ -31,7 +29,7 @@ option under `[main]` to be the mount point on the system running MultiScanner.
 Modules can have a `replacement path` option, which is the network share mount point
 on the analytic machine.
 
-Installing Elasticsearch
+#Installing Elasticsearch
 ------------------------
 Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called 'dedot' with a processor to replace dots in field names with underscores.
 
