@@ -1,6 +1,6 @@
 High-level Architecture
 -----------------------
-The MultiScanner architecture is shown in the figure below. Task management components (Celery/RabbitMQ Server and Postgres Server) provide task assignment and tracking. Data storage is available for both malware samples (distributed file system) and analysis results (Elasticsearch cluster). Worker nodes execute tasks.
+The MultiScanner architecture is shown in the figure below. Task management components (Celery/RabbitMQ Server and PostgreSQL Server) provide task assignment and tracking. Data storage is available for both malware samples (GlusterFS) and analysis results (Elasticsearch). Worker nodes execute tasks. Note that worker nodes are co-located with the distributed file system for improved performance.
 
 ![architecture1](img/arch1.png "MultiScanner Architecture")
 
