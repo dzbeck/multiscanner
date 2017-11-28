@@ -2,9 +2,9 @@ Using MultiScanner
 ==================
 Information on default tool modules, the user interface, and the API is below.
 
-##Default Tool Modules
+##Default Analysis Modules
 ----------------------
-Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of modules currently available in MultiScanner.
+Whether accessing MultiScanner through its Web UI or its API, Table 1 shows the set of analysis modules currently available in MultiScanner.
 
 | AV Scans |   |
 | -------- | - |
