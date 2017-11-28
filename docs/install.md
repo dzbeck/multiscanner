@@ -5,7 +5,7 @@ Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
 installs the prerequisites on most systems.
 
-Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. If you'd like to get an idea of how the system works without having to go through the full process of setting up the distributed architecture, look into our [docker containers](using.md#docker) for a standalone system. Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
+Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. If you'd like to get an idea of how the system works without having to go through the full process of setting up the distributed architecture, look into our [docker containers](#docker-installation) for a standalone system. Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
 # Installing Ansible
 --------------------
@@ -192,8 +192,8 @@ This module scans the files with yara and returns the results; yara-python must 
 | **fileextensions** | A python array of all valid rule file extensions. Files not ending in one of these will be ignored.|
 | **ignore-tags** | A python array of yara rule tags that will not be included in the report.|
 
-##Docker
---------
+##Docker Installation
+---------------------
 
 To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run:
 

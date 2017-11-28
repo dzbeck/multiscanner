@@ -4,34 +4,27 @@ Details on the components of the MultiScanner architecture are given below the d
 
 ![architecture1](img/arch1.png "MultiScanner Architecture")
 
-- Web Frontend
-
+- Web Frontend  
 The web application runs on [Flask](http://flask.pocoo.org/), uses [Bootstrap](https://getbootstrap.com/) and [jQuery](https://jquery.com/), and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.
 
-- REST API
-
+- REST API  
 The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database in order to facilitate task tracking. Additionally, it acts as a gateway to the backend ElasticSearch document store. Searches entered into the web UI will be routed through the REST API and passed to the ElasticSearch cluster. This abstracts the complexity of querying ElasticSearch and gives the user a simple web interface to work with.
 
-- Task Queue
-
+- Task Queue  
 We use Celery as our distributed task queue.
 
-- Task Tracking
-
+- Task Tracking  
 PostgreSQL is our task management database. It is here that we keep track of scan times, samples, and the status of tasks (pending, complete, failed).
 
-- Distributed File System
-
+- Distributed File System  
 GlusterFS is our distributed file system. Each component that needs access to the raw samples mounts the share via FUSE. We selected GlusterFS because it is much more performant in our use case of storing a large number of small samples than a technology like HDFS would be.
 
-- Worker Nodes
-
+- Worker Nodes  
 The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). Worker nodes will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan. These figures are configurable.
 
 All worker nodes (Celery clients) have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
 
-- Report Storage
-
+- Report Storage  
 We use ElasticSearch to store the results of our file scans. This is where the true power of this system comes in. ElasticSearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
 
 Complete Workflow
@@ -76,39 +69,6 @@ interest:
 - gaps in current toolset
 - machine learning analytics on tool outputs
 - others
-
-## ssdeep Comparison ##
-Fuzzy hashing is an effective method to identify similar files based on common
-byte strings despite changes in the byte order and strcuture of the files.
-[ssdeep](https://ssdeep-project.github.io/ssdeep/index.html) provides a fuzzy
-hash implementation and provides the capability to compare hashes.
-
-Comparing ssdeep hashes at scale is a challenge. [[1]](https://www.virusbulletin.com/virusbulletin/2015/11/optimizing-ssdeep-use-scale/)
-originally described a method for comparing ssdeep hashes at scale.
-
-The ssdeep analytic computes ```ssdeep.compare``` for all samples where the
-result is non-zero and provides the capability to return all samples clustered
-based on the ssdeep hash.
-
-### Elasticsearch ###
-When possible, it can be effective to push work to the Elasticsearch cluster
-which support horizontal scaling. For the ssdeep comparison, Elasticsearch 
-[NGram  Tokenizers](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenizer.html)
-are used to compute 7-grams of the chunk and double-chunk portions
-of the ssdeep hash as described here [[2]](http://www.intezer.com/intezer-community-tip-ssdeep-comparisons-with-elasticsearch/).
-This prevents ever comparing two ssdeep hashes where the result will be zero.
-
-### Python ###
-Because we need to compute ```ssdeep.compare```, the ssdeep analytic cannot be
-done entirely in Elasticsearch. Python is used to query Elasicsearch, compute
-```ssdeep.compare``` on the results, and update the documents in Elasticsearch.
-
-### Deployment ###
-[celery beat](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html)
-is used to schedule and kick off the ssdeep comparison task nightly at 2am
-local time, when the system is experiencing less load from users. This ensures
-that the analytic will be run on all samples without adding an exorbinant load
-to the system.
 
 Reporting
 ---------
