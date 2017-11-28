@@ -56,9 +56,9 @@ http.cors.allow-origin: "<yourOrigin>"
 ----------------------
 Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
-configuration file does not need to be manually updated. See [Analysis Modules](use/use-analysis-mods.md) for more information.
+configuration file does not need to be manually updated.
 
-Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See [Default Tool Modules](using.md#Default-Tool-Modules) for information about all default modules.
+Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See [Analysis Modules](use/use-analysis-mods.md) for information about all existing modules.
 
 ##Common Parameters
 The parameters below may be used by all modules.
@@ -85,7 +85,7 @@ This module searches virustotal for a file hash and downloads the report, if ava
 | **web-config** | |
 
 ## Parameters of Analysis Modules
-Analysis modules with additional parameters are given below in alphabetical order. See [Modules](using.md#tool-modules) for a list of all current analysis modules.
+Analysis modules with additional parameters are given below in alphabetical order. See [Analysis Modules](use/use-analysis-mods.md) for a list of all current analysis modules.
 
 ### [Cuckoo]  
 This module submits a file to a Cuckoo Sandbox cluster for analysis
