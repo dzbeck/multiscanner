@@ -3,7 +3,7 @@ Usage information on the web user interface and the REST API is below. We also p
 #Web User Interface
 need details...
 
-#API
+# REST API
 Via its RESTful API, MultiScanner can be incorporated as a module in another project. Below is a simple example of how to import MultiScanner into a Python script.
 
 ``` python

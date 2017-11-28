@@ -27,12 +27,12 @@ We use ElasticSearch to store the results of our file scans. This is where the t
 
 Complete Workflow
 -----------------
-Each step of the MultiScanner workflow is described below the diagram. [**if numbered steps below are correct, diagram must be updated**]
+Each step of the MultiScanner workflow is described below the diagram.
 
 ![architecture2](img/arch2.png "MultiScanner Workflow")
 
-1. The user submits a sample file through the Web UI (or REST UI).
-1. The Web UI (or REST UI):  
+1. The user submits a sample file through the Web UI (or REST API).
+1. The Web UI (or REST API):  
   a\. &nbsp; Stores the file in the distributed file system (GlusterFS)   
   b\. &nbsp; Places the task on the task queue (Celery)  
   c\. &nbsp; Adds an entry to the task management database (PostgreSQL)  
@@ -42,7 +42,7 @@ Each step of the MultiScanner workflow is described below the diagram. [**if num
   c\. &nbsp; Analyses the file  
   d\. &nbsp; Generates a JSON blob and indexes it into Elasticsearch  
   e\. &nbsp; Updates the task management database with the task status ("complete")      
-1. The Web UI (or REST UI):  
+1. The Web UI (or REST API):  
   a\. &nbsp; Gets report ID associated with the Task ID  
   b\. &nbsp; Pulls analysis report from the Elasticsearch datastore  
 
