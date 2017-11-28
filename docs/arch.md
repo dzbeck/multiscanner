@@ -14,8 +14,8 @@ The workflow is as follows:
 
 1. The user submits a file through the Web (or REST) UI.
 1. The Web (or REST) UI:  
-  a\. &nbsp;&nbsp Saves the file in the distributed file system  
-  b\. &nbsp Places the task on the work queue  
+  a\. &nbsp;&nbsp; Saves the file in the distributed file system  
+  b\. &nbsp; Places the task on the work queue  
   c\.  Posts and tracks Task ID  
 1. The task manager pushes the task (filename to scan) to a worker node.
 1. The worker node:  
