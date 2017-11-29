@@ -4,7 +4,7 @@ Modules are intended to be easily written and incorporated into the MultiScanner
 
 Modules are intended to be quickly written and incorporated into the MultiScanner framework. A finished module must be placed in the modules folder before it can be used. The configuration file does not need to be manually updated.
  
-See this [example module](..\example.md).
+See this [example module](../example.md).
 
 
 ## Mandatory Functions ##
