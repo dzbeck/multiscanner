@@ -7,7 +7,7 @@ If you'd like to get an idea of how the system works without going through the f
 --------------------
 Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
-An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/master/install.sh), which
+An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/feature-celery/install.sh), which
 installs the prerequisites on most systems.
 
 Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. 
@@ -214,11 +214,11 @@ Running this command will generate a lot of output and take some time. The syste
 api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 ```
 
-*Note 1:* &nbsp;  We are assuming that you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
+*Note 1:* &nbsp;  We assume you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
 
-*Note 2:* &nbsp;  Since this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for RAM / computing power. We'd recommend running this on a machine with at least 4GB of RAM.
+*Note 2:* &nbsp;  Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for RAM / computing power. We recommend running this on a machine with at least 4GB of RAM.
 
-*Note 3:* &nbsp;  THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. Users should not run this in production or at scale. The MultiScanner framework is highly scalable and distributed, but that requires a full install. Currently, we support installing the distributed system via ansible. More information about that process can be found here: https://github.com/mitre/multiscanner-ansible
+*Note 3:* &nbsp;  THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. Users should not run this in production or at scale. The MultiScanner framework is highly scalable and distributed, but that requires a full install. Currently, we support installing the distributed system via Ansible. More information about that process can be found here: https://github.com/mitre/multiscanner-ansible
 
 *Note 4:* &nbsp;  This container will only be reachable / functioning on localhost.
 
