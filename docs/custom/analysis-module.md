@@ -4,7 +4,7 @@ Modules are intended to be easily written and incorporated into the MultiScanner
 
 Modules are intended to be quickly written and incorporated into the MultiScanner framework. A finished module must be placed in the modules folder before it can be used. The configuration file does not need to be manually updated.
  
-See this [example module](../example.md).
+See this [example module](example.md).
 
 
 ## Mandatory Functions ##
@@ -33,7 +33,7 @@ There are two global variables that when present, affect the way the module is c
 
 **DEFAULTCONF** - This is a dictionary of configuration settings. When set, the settings will be written to the configuration file, making it user editable. The configuration object will be passed to the module's check and scan function and must be an argument in both functions.
 
-**REQUIRES** - This is a list of the module results needed for a module. For example, `REQUIRES = ['MD5']` will be set to the output from the module MD5.py. A code sample is provided in [examples/include_module.py](examples/include_module.py)
+**REQUIRES** - This is a list of the module results needed for a module. For example, `REQUIRES = ['MD5']` will be set to the output from the module MD5.py. A [code sample](example.md) is provided.
 
 ## Module Interface ##
 The module interface is a class that is put into each module as it is run. This allows for several features to be added for interacting with the framework at runtime. It is injected as `multiscanner` in the global namespace.

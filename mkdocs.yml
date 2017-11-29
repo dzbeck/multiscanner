@@ -13,4 +13,4 @@ pages:
     - 'Analysis Modules': 'custom/analysis-module.md'
     - 'Analytics': 'custom/analytics.md'
     - 'Storage Modules': 'custom/storage-module.md'
-- Example Module: 'example.md'
+    - 'Example Module': 'example.md'
