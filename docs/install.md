@@ -55,6 +55,7 @@ http.cors.enabled: true
 http.cors.allow-origin: "<yourOrigin>"
 ```
 
+
 ##Module Configuration
 ----------------------
 Modules are intended to be quickly written and incorporated into the framework.
@@ -221,4 +222,4 @@ api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
 *Note 4:* &nbsp;  This container will only be reachable / functioning on localhost.
 
-*Note 5:* &nbsp;  Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment [lines 18-20](<../docker-compose.yml#L18>) and [lines 35-37](<../docker-compose.yml#L35>). Next, uncomment [lines 25-28](../docker-compose.yml#L25>) and set the correct proxy variables there. Finally, do the same thing in [lines 42-45](../docker-compose.yml#L42>). The docker-compose.yml file has comments to make clear where to make these changes.
+*Note 5:* &nbsp;  Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment [lines 18-20](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18) and [lines 35-37](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35). Next, uncomment [lines 25-28](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25) and set the correct proxy variables there. Finally, do the same thing in [lines 42-45](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42). The docker-compose.yml file has comments to make clear where to make these changes.
