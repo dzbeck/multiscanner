@@ -1,17 +1,9 @@
-See below for instruction on:
-
-- [Submitting Files for Analysis](#submitting-files-for-analysis)
-- [Viewing Analyses](#viewing-analyses)
-- [Searching](#searching)
-- [Viewing Reports](#viewing-reports)
-- [Using Analytics](#using-analytics)
-
 ##Submitting Files for Analysis
 -------------------------------
 
-![MultiScanner Web Interface](../img/Selection_001.png)
-
 When you visit MultiScanner's web interface in a web browser, you'll be greeted by the file submission page. Drag files onto the large drop area in the middle of the page or click it or the "Select File(s)..." button to select one or more files to be uploaded and analyzed.
+
+![MultiScanner Web Interface](../img/Selection_001.png)
 
 Click on the "Advanced Options" button to change default options and set metadata fields to be added to the scan results.
 
@@ -67,18 +59,28 @@ Click on a row in the list to go to that report, and click the red "X" button to
 ##Searching
 -----------
 
+Reports can be searched from any page, with a few options. You can search Analyses to get the most recent scan per file, or search History to get all scans recorded for each file. 
+
 ![Navbar Search](../img/Selection_015.png)
 
-Reports can be searched from any page, with a few options. You can search Analyses to get the most recent scan per file, or search History to get all scans recorded for each file. Use the "Default" search type to have wildcards automatically appended to the beginning and end of your search term. Use the "Exact" search type to search automatically append quotes and search for the exact phrase. Finally, use the "Advanced" search type to search with the full power of Lucene query string syntax. Nothing will be automatically appended and you will need to escape any reserved characters yourself. When you click on one of the search results, the search term will be highlighted on the Report page and the report will be expanded and automatically scrolled to the first match.
+Use the "Default" search type to have wildcards automatically appended to the beginning and end of your search term. 
+
+Use the "Exact" search type to search automatically append quotes and search for the exact phrase. 
+
+Finally, use the "Advanced" search type to search with the full power of Lucene query string syntax. Nothing will be automatically appended and you will need to escape any reserved characters yourself. 
+
+When you click on a search result, the search term will be highlighted on the Report page and the report will be expanded and automatically scrolled to the first match.
 
 ![Analyses/History Search](../img/Selection_016.png)
 
 ##Viewing Reports
 -----------------
 
+Each report page displays the results of a single analysis.
+
 ![Report Page](../img/Selection_017.png)
 
-Each report page displays the results of a single analysis. Some rows in the report can be expanded or collapsed to reveal more data by clicking on the row header or the "Expand" button. Shift-clicking will also expand or collapse all of it's child rows.
+Some rows in the report can be expanded or collapsed to reveal more data by clicking on the row header or the "Expand" button. Shift-clicking will also expand or collapse all of it's child rows.
 
 ![Expand Button](../img/Selection_024.png)
 
@@ -109,6 +111,8 @@ These notes and comments can be edited and deleted. Click the "<" button to coll
 ##Using Analytics
 -----------------
 
+The Analytics page displays various pieces of advanced analysis. For now, this is limited to ssdeep comparisons.
+
 ![Analytics Page](../img/Selection_002.png)
 
-The Analytics page displays various pieces of advanced analysis. For now, this is limited to ssdeep comparisons. The table lists samples, with those that have very similar ssdeep hashes grouped together. Other analytics will be added in the future. For more information, see [this page](../docs/analytics.md).
+ The table lists samples, with those that have very similar ssdeep hashes grouped together. Other analytics will be added in the future. For more information, see the [Using Analytics](use-analytics.md) page.
