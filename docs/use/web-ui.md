@@ -1,8 +1,14 @@
-#Web User Interface
-# Web Interface #
+#Web Interface
+See below for information on:
 
-Submit Files for Analysis
--------------------------
+- [Submitting Files](#submit-files-for-analysis)
+- [Viewing Analyses and History Pages](#analysis-and-history-pages)
+- [Searching](#searching)
+- [Viewing Reports](#report-page)
+- [Using Analytics](#analytics)
+
+##Submit Files for Analysis
+---------------------------
 
 ![MultiScanner Web Interface](../img/Selection_001.png)
 
@@ -40,8 +46,8 @@ If the analysis has not completed yet, you'll see a "Pending" message.
 
 ![Pending](../img/Selection_010.png)
 
-Analyses and History Pages
---------------------------
+##Analyses and History Pages
+----------------------------
 
 Reports can be listed and searched in two different ways. The Analyses page lists the most recent report per sample.
 
@@ -59,8 +65,8 @@ Click on a row in the list to go to that report, and click the red "X" button to
 
 ![Delete Button](../img/Selection_014.png)
 
-Searching
----------
+##Searching
+-----------
 
 ![Navbar Search](../img/Selection_015.png)
 
@@ -68,8 +74,8 @@ Reports can be searched from any page, with a few options. You can search Analys
 
 ![Analyses/History Search](../img/Selection_016.png)
 
-Report page
------------
+##Report page
+-------------
 
 ![Report Page](../img/Selection_017.png)
 
@@ -101,8 +107,8 @@ These notes and comments can be edited and deleted. Click the "<" button to coll
 
 ![Close Notes](../img/Selection_023.png)
 
-Analytics
----------
+##Analytics
+-----------
 
 ![Analytics Page](../img/Selection_002.png)
 
