@@ -1,4 +1,4 @@
-# REST API
+# Python API
 Via its RESTful API, MultiScanner can be incorporated as a module in another project. Below is a simple example of how to import MultiScanner into a Python script.
 
 ``` python
