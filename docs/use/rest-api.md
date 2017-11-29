@@ -31,7 +31,7 @@ GET /api/v1/tasks/<task_id>/file?raw={t|f} ----> download sample, defaults to pa
 
 GET /api/v1/tasks/<task_id>/maec ----> download the Cuckoo MAEC 5.0 report, if it exists 
 
-GET /api/v1/tasks/<task_id>/notes ---> Receive list of this task's notes
+GET /api/v1/tasks/<task_id>/notes ---> Receive list of this task\'s notes
 
 POST /api/v1/tasks/<task_id>/notes ---> Add a note to task
 
