@@ -1,3 +1,5 @@
+# RESTful API
+
 ``` python
 Flask app that provides a RESTful API to MultiScanner.
 
