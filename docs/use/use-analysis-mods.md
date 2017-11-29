@@ -1,6 +1,6 @@
 ##Current Analysis Modules
 
-The set of analysis modules currently available in MultiScanner are listed below.
+The analysis modules currently available in MultiScanner are listed below.
 
 | AV Scans |   |
 | -------- | - |

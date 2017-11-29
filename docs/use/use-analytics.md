@@ -1,5 +1,7 @@
 ##Current Analytics
 
+Currently, one analytic is available:
+
 **[ssdeep]**
 
 Fuzzy hashing is an effective method to identify similar files based on common byte strings despite changes in the byte order and structure of the files. [ssdeep](https://ssdeep-project.github.io/ssdeep/index.html) provides a fuzzy hash implementation and provides the capability to compare hashes. The [Virus Bulletin](https://www.virusbulletin.com/virusbulletin/2015/11/optimizing-ssdeep-use-scale/) originally described a method for comparing ssdeep hashes at scale. 
