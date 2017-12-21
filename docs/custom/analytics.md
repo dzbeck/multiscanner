@@ -11,4 +11,4 @@ The following are some example types of analytics and queries that may be of int
 - machine learning analytics on tool outputs
 - others
 
-Developing analytics is somewhat adhoc. However, the [Current Analytics](use/use-analytics.md) page contains details of how the **ssdeep** analytic was developed.
+Analytics development is currently ad hoc. Until interfaces are created to standardize development of analytics, the [Current Analytics](use/use-analytics.md) page, which contains details of how the **ssdeep** analytic was developed, might be useful.
