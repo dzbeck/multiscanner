@@ -10,4 +10,4 @@ The following are some example types of analytics and queries that may be of int
 - gaps in current toolset
 - machine learning analytics on tool outputs
 
-Analytic development is currently ad hoc. Until interfaces are created to standardize development, the [Current Analytics](use/use-analytics.md) page might prove useful - it contains development details of the **ssdeep** analytic.
+Analytic development is currently ad hoc. Until interfaces are created to standardize development, the [Current Analytics](../use/use-analytics.md) page might prove useful - it contains development details of the **ssdeep** analytic.
