@@ -7,10 +7,7 @@ MultiScanner
 ============
 
 .. toctree::
-   :maxdepth: 3
-   :glob:
    
-   index
    arch
    use-cases
    install
