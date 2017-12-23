@@ -10,7 +10,10 @@ MultiScanner
    :maxdepth: 3
    :glob:
    
-   *
+   index
+   arch
+   use-cases
+   install
 
 
 Indices and tables

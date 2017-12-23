@@ -200,8 +200,8 @@ This module scans the files with yara and returns the results; yara-python must 
 | **fileextensions** | A python array of all valid rule file extensions. Files not ending in one of these will be ignored.|
 | **ignore-tags** | A python array of yara rule tags that will not be included in the report.|
 
-##Standalone Docker Installation
----------------------
+Standalone Docker Installation
+------------------------------
 To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run:
 
 ```
