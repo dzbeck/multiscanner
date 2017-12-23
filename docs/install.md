@@ -5,7 +5,7 @@ Information for installing the different components of MultiScanner is provided 
 If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, look into our [docker standalone system](#standalone-docker-installation). Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
 System Requirements
----------------------
+-------------------
 Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/feature-celery/install.sh), which
@@ -13,8 +13,8 @@ installs the prerequisites on most systems.
 
 Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. 
 
-##Installing Ansible
---------------------
+Installing Ansible
+------------------
 If you're running on a RedHat or Debian based linux distribution, try and run
 [install.sh](<install.sh>). Otherwise the required python packages are defined in
 [requirements.txt](https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt).
@@ -25,8 +25,8 @@ This command can be used to rewrite the configuration file to its default state 
 if new modules have been written, to add their configuration to the configuration
 file.
 
-##Installing Analytic Machines
-------------------------------
+Installing Analytic Machines
+----------------------------
 Default modules have the option to be run locally or via SSH. The development team
 runs MultiScanner on a Linux host and hosts the majority of analytical tools on
 a separate Windows machine. The SSH server used in this environment is freeSSHd
@@ -39,8 +39,8 @@ option under `[main]` to be the mount point on the system running MultiScanner.
 Modules can have a `replacement path` option, which is the network share mount point
 on the analytic machine.
 
-##Installing Elasticsearch
--------------------------
+Installing Elasticsearch
+------------------------
 Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called 'dedot' with a processor to replace dots in field names with underscores.
 
 Add the following to your elasticsearch.yml config for the dedot processor to work:
@@ -57,8 +57,8 @@ http.cors.allow-origin: "<yourOrigin>"
 ```
 
 
-##Module Configuration
-----------------------
+Module Configuration
+--------------------
 Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
 configuration file does not need to be manually updated.
