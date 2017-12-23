@@ -1,3 +1,6 @@
+Architecture
+============
+
 High-level Architecture
 -----------------------
 Details on the components of the MultiScanner architecture are given below the diagram. 
@@ -5,14 +8,17 @@ Details on the components of the MultiScanner architecture are given below the d
 ![architecture1](img/arch1.png "MultiScanner Architecture")
 
 - **Web Frontend**  
+
 The web application runs on [Flask](http://flask.pocoo.org/), uses [Bootstrap](https://getbootstrap.com/) and [jQuery](https://jquery.com/), and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.
 
 
 - **REST API**  
+
 The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database in order to facilitate task tracking. Additionally, it acts as a gateway to the backend ElasticSearch document store. Searches entered into the web UI will be routed through the REST API and passed to the ElasticSearch cluster. This abstracts the complexity of querying ElasticSearch and gives the user a simple web interface to work with.
 
 
-- **Task Queue**  
+- **Task Queue**
+  
 We use Celery as our distributed task queue.
 
 - **Task Tracking**  
