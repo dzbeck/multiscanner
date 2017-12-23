@@ -1,7 +1,8 @@
-Custom Development
+Using MultiScanner
 ==================
 
 .. toctree::
+   :maxdepth: 1
   
    web-ui.md
    python-api.md

@@ -1,4 +1,5 @@
-##Current Analysis Modules
+Analysis Modules
+================
 
 The analysis modules currently available in MultiScanner are listed below.
 

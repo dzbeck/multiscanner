@@ -1,4 +1,5 @@
-# Developing an Analytic
+Developing an Analytic
+======================
 
 Enabling analytics and advanced queries is the primary advantage of running several tools against a sample, extracting as much information as possible, and storing the output in a common datastore. For example, the following types of analytics and queries might be of interest:
 

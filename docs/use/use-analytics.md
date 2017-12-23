@@ -1,4 +1,5 @@
-##Current Analytics
+Analytics
+=========
 
 Currently, one analytic is available:
 
