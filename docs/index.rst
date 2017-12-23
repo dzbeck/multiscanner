@@ -18,11 +18,7 @@ MultiScanner
    use/rest-api.md
    use/use-analysis-mods.md
    use/use-analytics.md
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   custom/analysis-module.md
+   custom/analytics.md
+   custom/storage-module.md
+   custom/example.md

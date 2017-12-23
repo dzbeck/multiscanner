@@ -1,5 +1,5 @@
-Using MultiScanner
-==================
+Web UI
+======
 
 Submitting Files for Analysis
 ------------------------------
@@ -40,8 +40,8 @@ If the analysis has not completed yet, you'll see a "Pending" message.
 
 ![Pending](../img/Selection_010.png)
 
-#Viewing Analyses
-------------------
+Viewing Analyses
+----------------
 
 Reports can be listed and searched in two different ways. The Analyses page lists the most recent report per sample.
 
@@ -59,8 +59,8 @@ Click on a row in the list to go to that report, and click the red "X" button to
 
 ![Delete Button](../img/Selection_014.png)
 
-#Searching
------------
+Searching
+---------
 
 Reports can be searched from any page, with a few options. You can search Analyses to get the most recent scan per file, or search History to get all scans recorded for each file. 
 
@@ -76,8 +76,8 @@ When you click on a search result, the search term will be highlighted on the Re
 
 ![Analyses/History Search](../img/Selection_016.png)
 
-#Viewing Reports
------------------
+Viewing Reports
+---------------
 
 Each report page displays the results of a single analysis.
 
@@ -111,8 +111,8 @@ These notes and comments can be edited and deleted. Click the "<" button to coll
 
 ![Close Notes](../img/Selection_023.png)
 
-#Using Analytics
------------------
+Using Analytics
+---------------
 
 The Analytics page displays various pieces of advanced analysis. For now, this is limited to ssdeep comparisons.
 

@@ -1,4 +1,8 @@
-# Developing an Analysis Module
+Custom Development
+==================
+
+Developing an Analysis Module
+-----------------------------
 
 Modules are intended to be easily written and incorporated into the MultiScanner framework. A finished module must be in the modules folder for it to be used on the next run.
 
