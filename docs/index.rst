@@ -18,7 +18,4 @@ MultiScanner
    use/rest-api.md
    use/use-analysis-mods.md
    use/use-analytics.md
-   custom/analysis-module.md
-   custom/analytics.md
-   custom/storage-module.md
-   custom/example.md
+   custom/index
