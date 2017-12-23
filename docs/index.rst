@@ -13,9 +13,5 @@ MultiScanner
    arch
    use-cases
    install
-   use/web-ui.md
-   use/python-api.md
-   use/rest-api.md
-   use/use-analysis-mods.md
-   use/use-analytics.md
+   use/index
    custom/index

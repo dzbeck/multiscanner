@@ -1,6 +1,3 @@
-Custom Development
-==================
-
 Developing an Analysis Module
 -----------------------------
 
