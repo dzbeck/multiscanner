@@ -7,6 +7,7 @@ MultiScanner
 ============
 
 .. toctree::
+   :maxdepth: 2
    
    overview
    arch

@@ -1,5 +1,8 @@
-#Submitting Files for Analysis
--------------------------------
+Using MultiScanner
+==================
+
+Submitting Files for Analysis
+------------------------------
 
 When you visit MultiScanner's web interface in a web browser, you'll be greeted by the file submission page. Drag files onto the large drop area in the middle of the page or click it or the "Select File(s)..." button to select one or more files to be uploaded and analyzed.
 
