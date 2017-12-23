@@ -81,11 +81,15 @@ The parameters below may be used by all modules.
 ### Parameters of Core Modules ###
 
 **[main]**  
+
 This module searches virustotal for a file hash and downloads the report, if available.
 
 | Parameter | Description |
+
 | --------- | ----------- |
+
 | **copyfilesto** | This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.|
+
 | **group-types** | This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.|
 | **storage-config** | |
 | **api-config** | |
@@ -194,10 +198,12 @@ This module submits a file to a VxStream Sandbox cluster for analysis
 | **running timeout** | An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.|
 
 **[YaraScan]**  
+
 This module scans the files with yara and returns the results; yara-python must be installed.
 
 | Parameter | Description |
 | --------- | ----------- |
+
 | **ruledir** | The directory to look for rule files in.|
 | **fileextensions** | A python array of all valid rule file extensions. Files not ending in one of these will be ignored.|
 | **ignore-tags** | A python array of yara rule tags that will not be included in the report.|
