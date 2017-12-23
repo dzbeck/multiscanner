@@ -65,7 +65,8 @@ configuration file does not need to be manually updated.
 
 Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See [Analysis Modules](use/use-analysis-mods.md) for information about all existing modules.
 
-###Common Parameters
+Common Parameters
+^^^^^^^^^^^^^^^^^
 The parameters below may be used by all modules.
 
 | Parameter | Description |
@@ -77,7 +78,8 @@ The parameters below may be used by all modules.
 | **replacement path** | If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. |
 | **ENABLED** | When set to false, the module will not run. |
 
-###Parameters of Core Modules
+Parameters of Core Modules
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **[main]**  
 This module searches virustotal for a file hash and downloads the report, if available.
@@ -90,7 +92,8 @@ This module searches virustotal for a file hash and downloads the report, if ava
 | **api-config** | |
 | **web-config** | |
 
-###Parameters of Analysis Modules
+Parameters of Analysis Modules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Analysis modules with additional parameters are given below in alphabetical order. See [Analysis Modules](use/use-analysis-mods.md) for a list of all current analysis modules.
 
 **[Cuckoo]**  
