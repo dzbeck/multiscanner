@@ -1,10 +1,11 @@
-#Installation
+Installation
+============
 Information for installing the different components of MultiScanner is provided below.
 
 If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, look into our [docker standalone system](#standalone-docker-installation). Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
-##System Requirements
---------------------
+System Requirements
+---------------------
 Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/feature-celery/install.sh), which
