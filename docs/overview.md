@@ -11,7 +11,7 @@ scope. For descriptions of existing modules, see [Analysis Modules](use/use-anal
 
 MultiScanner supports a distributed workflow for sample storage, analysis, and report viewing. This functionality includes a web interface, a REST API, a distributed file system (GlusterFS), distributed report storage / searching (ElasticSearch), and distributed task management (Celery / RabbitMQ). See the [workflow diagram](arch.html#complete-workflow) for details.
 
-MultiScanner is available as open source in '<GitHub https://github.com/mitre/multiscanner/tree/feature-celery>'_.
+MultiScanner is available as open source in [GitHub](https://github.com/mitre/multiscanner/tree/feature-celery).
 
 Key Capabilities
 ----------------

@@ -1,5 +1,4 @@
-Writing a storage module
-========================
+# Writing a storage module #
 
 Each storage object is a class which needs to be derived from `storage.Storage`. You can have more than one storage object
 per python file.

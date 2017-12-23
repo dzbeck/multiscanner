@@ -1,11 +1,11 @@
-Installation
-============
+# Installation #
+
 Information for installing the different components of MultiScanner is provided below.
 
 If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, look into our [docker standalone system](#standalone-docker-installation). Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
-System Requirements
--------------------
+## System Requirements ##
+
 Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
 An installer script is included in the project [install.sh](https://github.com/mitre/multiscanner/blob/feature-celery/install.sh), which
@@ -13,8 +13,8 @@ installs the prerequisites on most systems.
 
 Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. 
 
-Installing Ansible
-------------------
+## Installing Ansible ##
+
 If you're running on a RedHat or Debian based linux distribution, try and run
 [install.sh](<install.sh>). Otherwise the required python packages are defined in
 [requirements.txt](https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt).
@@ -25,8 +25,8 @@ This command can be used to rewrite the configuration file to its default state 
 if new modules have been written, to add their configuration to the configuration
 file.
 
-Installing Analytic Machines
-----------------------------
+## Installing Analytic Machines ##
+
 Default modules have the option to be run locally or via SSH. The development team
 runs MultiScanner on a Linux host and hosts the majority of analytical tools on
 a separate Windows machine. The SSH server used in this environment is freeSSHd
@@ -39,8 +39,8 @@ option under `[main]` to be the mount point on the system running MultiScanner.
 Modules can have a `replacement path` option, which is the network share mount point
 on the analytic machine.
 
-Installing Elasticsearch
-------------------------
+## Installing Elasticsearch ##
+
 Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called 'dedot' with a processor to replace dots in field names with underscores.
 
 Add the following to your elasticsearch.yml config for the dedot processor to work:
@@ -57,16 +57,16 @@ http.cors.allow-origin: "<yourOrigin>"
 ```
 
 
-Module Configuration
---------------------
+## Module Configuration ##
+
 Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
 configuration file does not need to be manually updated.
 
 Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See [Analysis Modules](use/use-analysis-mods.md) for information about all existing modules.
 
-Common Parameters
-^^^^^^^^^^^^^^^^^
+### Common Parameters ###
+
 The parameters below may be used by all modules.
 
 | Parameter | Description |
@@ -78,8 +78,7 @@ The parameters below may be used by all modules.
 | **replacement path** | If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. |
 | **ENABLED** | When set to false, the module will not run. |
 
-Parameters of Core Modules
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Parameters of Core Modules ###
 
 **[main]**  
 This module searches virustotal for a file hash and downloads the report, if available.
@@ -92,8 +91,8 @@ This module searches virustotal for a file hash and downloads the report, if ava
 | **api-config** | |
 | **web-config** | |
 
-Parameters of Analysis Modules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Parameters of Analysis Modules ###
+
 Analysis modules with additional parameters are given below in alphabetical order. See [Analysis Modules](use/use-analysis-mods.md) for a list of all current analysis modules.
 
 **[Cuckoo]**  
@@ -203,8 +202,8 @@ This module scans the files with yara and returns the results; yara-python must 
 | **fileextensions** | A python array of all valid rule file extensions. Files not ending in one of these will be ignored.|
 | **ignore-tags** | A python array of yara rule tags that will not be included in the report.|
 
-Standalone Docker Installation
-------------------------------
+## Standalone Docker Installation ##
+
 To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run:
 
 ```
