@@ -41,13 +41,13 @@ Each step of the MultiScanner workflow is described below the diagram.
 
 1. The user submits a sample file through the Web UI (or REST API).
 1. The Web UI (or REST API): &nbsp; 
-  a. Stores the file in the distributed file system (GlusterFS)   &nbsp; 
-  b. Places the task on the task queue (Celery) &nbsp; 
+  a. Stores the file in the distributed file system (GlusterFS)&nbsp; 
+  b. Places the task on the task queue (Celery)&nbsp; 
   c. Adds an entry to the task management database (PostgreSQL)  &nbsp;
 1. A worker node:&nbsp; 
-  a\. Pulls the task from the Celery task queue  
-  b\. &nbsp; Retrieves the corresponding sample file from the GlusterFS via its SHA256 value  
-  c\. &nbsp; Analyses the file  
+  a\. Pulls the task from the Celery task queue  &nbsp;
+  b\.  Retrieves the corresponding sample file from the GlusterFS via its SHA256 value  &nbsp;
+  c\.  Analyses the file  
   d\. &nbsp; Generates a JSON blob and indexes it into Elasticsearch  
   e\. &nbsp; Updates the task management database with the task status ("complete")      
 1. The Web UI (or REST API):  
