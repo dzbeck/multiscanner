@@ -5,7 +5,7 @@ High-level Architecture
 -----------------------
 Details on the components of the MultiScanner architecture are given below the diagram. 
 
-.. image:: img/arch.png
+.. image:: arch.png
     :align: center
 	:alt: MultiScanner Architecture
 
@@ -39,29 +39,30 @@ Complete Workflow
 -----------------
 Each step of the MultiScanner workflow is described below the diagram.
 
-.. image:: img/arch2.png
+.. image:: arch2.png
     :width: 300px
     :align: center
 	:height: 250px
 	:alt: MultiScanner Workflow
 
-1. The user submits a sample file through the Web UI (or REST API).
+#. The user submits a sample file through the Web UI (or REST API).
 
-1. The Web UI (or REST API):
-   a. Stores the file in the distributed file system (GlusterFS)
-   b. Places the task on the task queue (Celery)
-   c. Adds an entry to the task management database (PostgreSQL)
-1. A worker node:
+#. The Web UI (or REST API):
 
-   a. Pulls the task from the Celery task queue
-   b. Retrieves the corresponding sample file from the GlusterFS via its SHA256 value 
-   c. Analyzes the file  
-   d. Generates a JSON blob and indexes it into Elasticsearch  
-   e. Updates the task management database with the task status ("complete") 
+   #. Stores the file in the distributed file system (GlusterFS)
+   #. Places the task on the task queue (Celery)
+   #. Adds an entry to the task management database (PostgreSQL)
+#. A worker node:
+
+   #. Pulls the task from the Celery task queue
+   #. Retrieves the corresponding sample file from the GlusterFS via its SHA256 value 
+   #. Analyzes the file  
+   #. Generates a JSON blob and indexes it into Elasticsearch  
+   #. Updates the task management database with the task status ("complete") 
    
-1. The Web UI (or REST API): 
-   a. Gets report ID associated with the Task ID
-   b. Pulls analysis report from the Elasticsearch datastore  
+#. The Web UI (or REST API): 
+   #. Gets report ID associated with the Task ID
+   #. Pulls analysis report from the Elasticsearch datastore  
 
 Analysis Modules
 ----------------
