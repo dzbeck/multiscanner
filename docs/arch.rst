@@ -51,13 +51,13 @@ Each step of the MultiScanner workflow is described below the diagram.
    a. Stores the file in the distributed file system (GlusterFS)
    b. Places the task on the task queue (Celery)
    c. Adds an entry to the task management database (PostgreSQL)
-3. A worker node:
 
-   a. Pulls the task from the Celery task queue
-   b. Retrieves the corresponding sample file from the GlusterFS via its SHA256 value 
-   c. Analyzes the file  
-   d. Generates a JSON blob and indexes it into Elasticsearch  
-   e. Updates the task management database with the task status ("complete") 
+3. A worker node:&nbsp; 
+  a\. Pulls the task from the Celery task queue  &nbsp;
+  b\.  Retrieves the corresponding sample file from the GlusterFS via its SHA256 value  &nbsp;
+  c\.  Analyzes the file  &nbsp;  
+  d\.  Generates a JSON blob and indexes it into Elasticsearch  &nbsp;  
+  e\. Updates the task management database with the task status ("complete")  &nbsp;  
 4. The Web UI (or REST API): 
 
    a. Gets report ID associated with the Task ID
