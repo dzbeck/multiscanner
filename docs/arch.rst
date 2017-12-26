@@ -45,7 +45,7 @@ Each step of the MultiScanner workflow is described below the diagram.
    :scale: 80 %
    :alt: MultiScanner Workflow
 
-1. The user submits a sample file through the Web UI (or REST API).  
+1. The user submits a sample file through the Web UI (or REST API). &nbsp;  
 2. The Web UI (or REST API):
 
    a. Stores the file in the distributed file system (GlusterFS)
