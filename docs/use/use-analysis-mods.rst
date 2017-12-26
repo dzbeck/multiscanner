@@ -36,7 +36,7 @@ Flare FLOSS                    FireEye Labs Obfuscated String Solver uses static
 libmagic                       Runs libmagic against the files to identify filetype.
 Metadefender                   Runs Metadefender against a file.
 pdfinfo                        Extracts feature information from PDF files using `pdf-parser <http://blog.didierstevens.com/programs/pdf-tools/>`_.
-pehasher                       "Computes pehash values using a variety of algorithms: totalhase, anymaster, anymaster_v1_0_1, endgame, crits, and pehashng."|
+pehasher                       Computes pehash values using a variety of algorithms: totalhase, anymaster, anymaster_v1_0_1, endgame, crits, and pehashng.|
 ssdeep                         Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the `ssdeep website <http://ssdeep.sourceforge.net/>`_.
 =============================  ========================================
 
