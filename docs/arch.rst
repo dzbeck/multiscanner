@@ -38,13 +38,11 @@ Complete Workflow
 Each step of the MultiScanner workflow is described below the diagram.
 
 .. image:: arch2.png
-    :width: 300px
-    :align: center
-	:height: 250px
-	:alt: MultiScanner Workflow
+   :align: center
+   :scale: 80 %
+   :alt: MultiScanner Workflow
 
-1. The user submits a sample file through the Web UI (or REST API).
-
+1. The user submits a sample file through the Web UI (or REST API).  
 
 2. The Web UI (or REST API):
 
