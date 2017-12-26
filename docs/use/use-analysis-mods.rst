@@ -2,21 +2,16 @@ Analysis Modules
 ================
 
 The analysis modules currently available in MultiScanner are listed below.
-
-.. table:: 
-   :widths: auto
    
-   ========= =======
-   AV Scans  
-   ========= =======   
-   AVG 2014   Scans sample with AVG 2014 
-   ClamAVScan Scans sample with ClamAV
-   McAfeeScan Scans sample with McAfee AntiVirus Command Line 
-   ========== ===============================================
+==========  ===============================================
+AV Scans  
+==========  ===============================================   
+AVG 2014    Scans sample with AVG 2014 
+ClamAVScan  Scans sample with ClamAV
+McAfeeScan  Scans sample with McAfee AntiVirus Command Line 
+==========  ===============================================
    
-
-   
-  dafdsf
+kkll
   
 | Microsoft Security Essentials |   |
 | Metadefender |   |
