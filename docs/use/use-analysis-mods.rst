@@ -2,6 +2,9 @@ Analysis Modules
 ================
 
 The analysis modules currently available in MultiScanner are listed below.
+
+.. table::
+   :widths: auto
    
 =============================  ================================================
 AV Scans  
