@@ -5,7 +5,7 @@ High-level Architecture
 -----------------------
 Details on the components of the MultiScanner architecture are given below the diagram. 
 
-.. image:: arch.png
+.. image:: img/arch.png
 
 * **Web Frontend**  
 
@@ -44,6 +44,7 @@ Each step of the MultiScanner workflow is described below the diagram.
 	:alt: MultiScanner Workflow
 
 1. The user submits a sample file through the Web UI (or REST API).
+
 
 2. The Web UI (or REST API):
 
