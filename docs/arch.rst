@@ -6,8 +6,6 @@ High-level Architecture
 Details on the components of the MultiScanner architecture are given below the diagram. 
 
 .. image:: arch.png
-    :align: center
-	:alt: MultiScanner Architecture
 
 * **Web Frontend**  
 
@@ -45,24 +43,24 @@ Each step of the MultiScanner workflow is described below the diagram.
 	:height: 250px
 	:alt: MultiScanner Workflow
 
-#. The user submits a sample file through the Web UI (or REST API).
+1. The user submits a sample file through the Web UI (or REST API).
 
-#. The Web UI (or REST API):
+2. The Web UI (or REST API):
 
-   #. Stores the file in the distributed file system (GlusterFS)
-   #. Places the task on the task queue (Celery)
-   #. Adds an entry to the task management database (PostgreSQL)
-#. A worker node:
+   a. Stores the file in the distributed file system (GlusterFS)
+   b. Places the task on the task queue (Celery)
+   c. Adds an entry to the task management database (PostgreSQL)
+3. A worker node:
 
-   #. Pulls the task from the Celery task queue
-   #. Retrieves the corresponding sample file from the GlusterFS via its SHA256 value 
-   #. Analyzes the file  
-   #. Generates a JSON blob and indexes it into Elasticsearch  
-   #. Updates the task management database with the task status ("complete") 
+   a. Pulls the task from the Celery task queue
+   b. Retrieves the corresponding sample file from the GlusterFS via its SHA256 value 
+   c. Analyzes the file  
+   d. Generates a JSON blob and indexes it into Elasticsearch  
+   e. Updates the task management database with the task status ("complete") 
    
-#. The Web UI (or REST API): 
-   #. Gets report ID associated with the Task ID
-   #. Pulls analysis report from the Elasticsearch datastore  
+4. The Web UI (or REST API): 
+   a. Gets report ID associated with the Task ID
+   b. Pulls analysis report from the Elasticsearch datastore  
 
 Analysis Modules
 ----------------
