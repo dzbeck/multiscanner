@@ -9,15 +9,11 @@ AV Scans
 AVG 2014    Scans sample with AVG 2014 
 ClamAVScan  Scans sample with ClamAV
 McAfeeScan  Scans sample with McAfee AntiVirus Command Line 
-==========  ===============================================
-   
-kkll
-  
-| Microsoft Security Essentials |   |
-| Metadefender |   |
-| vtsearch | Searches VirusTotal for sample’s hash and downloads the report if available |
+Microsoft Security Essentials 
+Metadefender
+vtsearch  Searches VirusTotal for sample’s hash and downloads the report if available |
+========  ===============================================
 
-dafads
 
 | Sandbox Detonation |   |
 | ------------------ | - |
