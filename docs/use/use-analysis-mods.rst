@@ -30,14 +30,14 @@ MD5                            Generates the MD5 hash of the sample.
 PEFile                         Extracts features from EXE files.
 SHA1
 SHA256                         Generates the SHA256 hash of the sample.
-Tika                           Extracts metadata from the sample using 'Tika <https://tika.apache.org/)>'_.
-TrID                           Runs 'TrID <http://mark0.net/soft-trid-e.html)>'_ against a file.
+Tika                           Extracts metadata from the sample using `Tika <https://tika.apache.org/)>`_.
+TrID                           Runs `TrID <http://mark0.net/soft-trid-e.html)>`_ against a file.
 Flare FLOSS                    FireEye Labs Obfuscated String Solver uses static analysis techniques to deobfuscate strings from malware binaries. [floss]|
 libmagic                       Runs libmagic against the files to identify filetype.
 Metadefender                   Runs Metadefender against a file.
-pdfinfo                        Extracts feature information from PDF files using 'pdf-parser <http://blog.didierstevens.com/programs/pdf-tools/>"_.
+pdfinfo                        Extracts feature information from PDF files using `pdf-parser <http://blog.didierstevens.com/programs/pdf-tools/>`_.
 pehasher                       "Computes pehash values using a variety of algorithms: totalhase, anymaster, anymaster_v1_0_1, endgame, crits, and pehashng."|
-ssdeep                         Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the 'ssdeep website <http://ssdeep.sourceforge.net/>"_.
+ssdeep                         Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the `ssdeep website <http://ssdeep.sourceforge.net/>`_.
 =============================  ========================================
 
 
@@ -45,3 +45,4 @@ ssdeep                         Generates context triggered piecewise hashes (CTP
 Signatures 
 =============================  ========================================
 YaraScan                       Scans the sample with Yara and returns the results.
+=============================  ========================================
