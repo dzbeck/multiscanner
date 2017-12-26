@@ -43,7 +43,9 @@ Each step of the MultiScanner workflow is described below the diagram.
    :alt: MultiScanner Workflow
 
 1. The user submits a sample file through the Web UI (or REST API). 
-|   
+  
+  
+  
 2. The Web UI (or REST API):
 
    a. Stores the file in the distributed file system (GlusterFS)
@@ -64,7 +66,7 @@ Each step of the MultiScanner workflow is described below the diagram.
 Analysis Modules
 ----------------
 MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, or software applications running on different machines. 
-Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Modules can be enabled/disabled via a configuration file. Details are provided in the `Using MultiScanner <use/use-analysis-mods/>`_ section.
+Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Modules can be enabled/disabled via a configuration file. Details are provided in the `Using MultiScanner <./use/use-analysis-mods/>`_ section.
 
 Analytics
 ---------
