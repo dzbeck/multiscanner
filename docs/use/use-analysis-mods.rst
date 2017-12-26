@@ -20,13 +20,15 @@ The analysis modules currently available in MultiScanner are listed below.
 |                               | downloads the report if available               |
 +-------------------------------+-------------------------------------------------+
 
+Another table
 
-
-| Sandbox Detonation |   |
-| ------------------ | - |
-| Cuckoo Sandbox | Submits a sample to Cuckoo Sandbox cluster for analysis.|
-| FireEye API | Detonates the sample in FireEye AX via FireEye's API.|
-| VxStream | Submits a file to a VxStream Sandbox cluster for analysis.|
+===============================  ===========================================
+Sandbox Detonation 
+===============================  ===========================================
+Cuckoo Sandbox  Submits a sample to Cuckoo Sandbox cluster for analysis.
+FireEye API  Detonates the sample in FireEye AX via FireEye's API.
+VxStream  Submits a file to a VxStream Sandbox cluster for analysis.
+===============================  ===========================================
 
 | Metadata |   |
 | -------- | - |
