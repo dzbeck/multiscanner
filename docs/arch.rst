@@ -60,6 +60,7 @@ Each step of the MultiScanner workflow is described below the diagram.
    e. Updates the task management database with the task status ("complete") 
    
 4. The Web UI (or REST API): 
+
    a. Gets report ID associated with the Task ID
    b. Pulls analysis report from the Elasticsearch datastore  
 
