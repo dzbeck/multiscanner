@@ -5,7 +5,7 @@ High-level Architecture
 -----------------------
 Details on the components of the MultiScanner architecture are given below the diagram. 
 
-.. image:: img/arch.png
+.. image:: img/arch1.png
 
 * **Web Frontend**  
 
