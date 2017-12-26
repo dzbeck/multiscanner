@@ -11,7 +11,7 @@ Details on the components of the MultiScanner architecture are given below the d
 
 - **Web Frontend**  
 
-The web application runs on '<Flask http://flask.pocoo.org/>'_, uses '<Bootstrap https://getbootstrap.com/>'_ and '<jQuery https://jquery.com/>'_, and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.
+The web application runs on `<Flask http://flask.pocoo.org/>`_, uses `<Bootstrap https://getbootstrap.com/>`_ and `<jQuery https://jquery.com/>`_, and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.
 
 
 * **REST API**  
@@ -44,16 +44,19 @@ Each step of the MultiScanner workflow is described below the diagram.
 	:alt: MultiScanner Workflow
 
 1. The user submits a sample file through the Web UI (or REST API).
+
 1. The Web UI (or REST API):
    a. Stores the file in the distributed file system (GlusterFS)
    b. Places the task on the task queue (Celery)
    c. Adds an entry to the task management database (PostgreSQL)
 1. A worker node:
+
    a. Pulls the task from the Celery task queue
    b. Retrieves the corresponding sample file from the GlusterFS via its SHA256 value 
    c. Analyzes the file  
    d. Generates a JSON blob and indexes it into Elasticsearch  
    e. Updates the task management database with the task status ("complete") 
+   
 1. The Web UI (or REST API): 
    a. Gets report ID associated with the Task ID
    b. Pulls analysis report from the Elasticsearch datastore  
@@ -61,7 +64,7 @@ Each step of the MultiScanner workflow is described below the diagram.
 Analysis Modules
 ----------------
 MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, or software applications running on different machines. 
-Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Modules can be enabled/disabled via a configuration file. Details are provided in the '<Using MultiScanner use/use-analysis-mods/>'_ section.
+Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Modules can be enabled/disabled via a configuration file. Details are provided in the `<Using MultiScanner use/use-analysis-mods/>`_ section.
 
 Analytics
 ---------
