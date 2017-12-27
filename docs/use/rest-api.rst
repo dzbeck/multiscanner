@@ -1,10 +1,7 @@
 RESTful API
 ===========
 
-For now, this excerpt of the API Python code will serve as documentation for the RESTful API:
-
-.. code-block:: python
-    :linenos:
+For now, this excerpt of the API Python code will serve as documentation for the RESTful API::
 	
     Flask app that provides a RESTful API to MultiScanner.
 
