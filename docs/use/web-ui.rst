@@ -22,28 +22,28 @@ Metadata fields can be added or removed by editing web_config.ini. Metadata fiel
 
 .. image:: ../img/Selection_004.png
    :align: center
-   :scale: 50 %
+   :scale: 60 %
    :alt: File Options
 
 Change from "Scan" to "Import" to import JSON analysis reports into MultiScanner.  This is intended only to be used with the JSON reports you can download from a report page in MultiScanner.
 
 .. image:: ../img/Selection_005.png
    :align: center
-   :scale: 50 %
+   :scale: 60 %
    :alt: Import
 
 By default, if you resubmit a sample that has already been submitted, MultiScanner will pull the latest report of that sample. If you want MultiScanner to re-scan the sample, set that option in Advanced Options.
 
 .. image:: ../img/Selection_006.png
    :align: center
-   :scale: 50 %
+   :scale: 60 %
    :alt: Re-scan
 
 If you have a directory of samples you wish to scan at once, we recommend zipping them and uploading the archive with the option to extract archives enabled. You can also specify a password, if the archive file is password- protected. Alternatively you can use the REST API for bulk uploads.
 
 .. image:: ../img/Selection_007.png
    :align: center
-   :scale: 50 %
+   :scale: 60 %
    :alt: Archive Files
 
 Click the "Scan it!" button to submit the sample to MultiScanner.
@@ -135,7 +135,7 @@ Some rows in the report can be expanded or collapsed to reveal more data by clic
 
 .. image:: ../img/Selection_024.png
    :align: center
-   :scale: 50 %
+   :scale: 60 %
    :alt: Expand Button
 
 The "Expand All" button will expand all rows at once. If they are all expanded, this will turn into a "Collapse All" button that will collapse them all again.
@@ -185,6 +185,9 @@ Using Analytics
 
 The Analytics page displays various pieces of advanced analysis. For now, this is limited to ssdeep comparisons.
 
-![Analytics Page](../img/Selection_002.png)
+.. image:: ../img/Selection_002.png
+   :align: center
+   :scale: 50 %
+   :alt: Analytics Page
 
  The table lists samples, with those that have very similar ssdeep hashes grouped together. Other analytics will be added in the future. For more information, see the [Using Analytics](use-analytics.html) page.
