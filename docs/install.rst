@@ -17,7 +17,7 @@ Currently, MultiScanner is deployed with Ansible. We are also currently working 
 Installing Ansible
 ------------------
 
-If you're running on a RedHat or Debian based linux distribution, the `installer script https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_ should install required Python packages. Otherwise, refer to `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_ for requirement details.
+If you're running on a RedHat or Debian based linux distribution, the `installer script <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_ should install required Python packages. Otherwise, refer to `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_ for requirement details.
 
 MultiScanner requires a configuration file to run. Generate the MultiScanner default
 configuration by running ``python multiscanner.py init`` after cloning the repository.
@@ -69,6 +69,8 @@ Common Parameters
 
 The parameters below may be used by all modules.
 
+.. tabularcolumns:: |p{3cm}|l|
+
 ====================  =============================
 Parameter             Description
 ====================  =============================
@@ -108,6 +110,8 @@ Analysis modules with additional parameters are given below in alphabetical orde
 
 This module submits a file to a Cuckoo Sandbox cluster for analysis
 
+.. tabularcolumns:: |p{3cm}|l|
+
 ====================  =============================
 Parameter             Description
 ====================  =============================
@@ -122,6 +126,8 @@ Parameter             Description
 **[ExifToolsScan]**
 
 This module scans the file with Exif tools and returns the results.
+
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================  =============================
 Parameter             Description
@@ -153,6 +159,8 @@ Parameter             Description
 
 This module runs libmagic against the files.
 
+.. tabularcolumns:: |p{3cm}|l|
+
 ====================  =============================
 Parameter             Description
 ====================  =============================
@@ -162,6 +170,8 @@ Parameter             Description
 **[Metadefender]**  
 
 This module runs Metadefender against the files.
+
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================     =============================
 Parameter                Description
@@ -176,6 +186,8 @@ Parameter                Description
 **[NSRL]**  
 
 This module looks up hashes in the NSRL database.
+
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================  =============================
 Parameter             Description
@@ -192,6 +204,8 @@ This module extracts out feature information from EXE files. It uses `pefile <ht
 
 This module extracts metadata from the file using `Tika <https://tika.apache.org/>`_. For configuration of the module see the `tika-python <https://github.com/chrismattmann/tika-python/blob/master/README.md>`_ documentation.
 
+.. tabularcolumns:: |p{3cm}|l|
+
 ====================  =============================
 Parameter             Description
 ====================  =============================
@@ -206,6 +220,8 @@ This module runs `TrID <http://mark0.net/soft-trid-e.html>`_ against a file. The
 
 This module searches `virustotal <https://www.virustotal.com/>`_ for the files hash and download the report if available.
 
+.. tabularcolumns:: |p{3cm}|l|
+
 ====================  =============================
 Parameter             Description
 ====================  =============================
@@ -214,6 +230,8 @@ Parameter             Description
 
 **[VxStream]**  
 This module submits a file to a VxStream Sandbox cluster for analysis
+
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================  =============================
 Parameter             Description
@@ -231,6 +249,8 @@ Parameter             Description
 **[YaraScan]**  
 
 This module scans the files with yara and returns the results; yara-python must be installed.
+
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================  =============================
 Parameter             Description
