@@ -6,11 +6,17 @@ Submitting Files for Analysis
 
 When you visit MultiScanner's web interface in a web browser, you'll be greeted by the file submission page. Drag files onto the large drop area in the middle of the page or click it or the "Select File(s)..." button to select one or more files to be uploaded and analyzed.
 
-![MultiScanner Web Interface](../img/Selection_001.png)
+.. image:: ../img/Selection_001.png
+   :align: center
+   :scale: 65 %
+   :alt: MultiScanner Web Interface
 
 Click on the "Advanced Options" button to change default options and set metadata fields to be added to the scan results.
 
-![Advanced Options](../img/Selection_003.png)
+.. image:: ../img/Selection_003.png
+   :align: center
+   :scale: 65 %
+   :alt: Advanced Options
 
 Metadata fields can be added or removed by editing web_config.ini. Metadata field values can be set for individual files by clicking the small black button below and to the right of that filename in the staging area.
 
