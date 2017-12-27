@@ -190,4 +190,4 @@ The Analytics page displays various pieces of advanced analysis. For now, this i
    :scale: 50 %
    :alt: Analytics Page
 
- The table lists samples, with those that have very similar ssdeep hashes grouped together. Other analytics will be added in the future. For more information, see the [Using Analytics](use-analytics.html) page.
+ The table lists samples, with those that have very similar ssdeep hashes grouped together. Other analytics will be added in the future. For more information, see the `Using Analytics <use-analytics.html>`_ page.
