@@ -87,6 +87,8 @@ Parameters of Core Modules
 
 This module searches virustotal for a file hash and downloads the report, if available.
 
+.. tabularcolumns:: |p{5cm}|l|
+
 ====================  =============================
 Parameter             Description
 ====================  =============================
