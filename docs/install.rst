@@ -105,7 +105,7 @@ Parameter             Description
 Parameters of Analysis Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Analysis modules with additional parameters are given below in alphabetical order. See `Analysis Modules <use/use-analysis-mods.md>'_ for a list of all current analysis modules.
+Analysis modules with additional parameters are given below in alphabetical order. See `Analysis Modules <use/use-analysis-mods.md>`_ for a list of all current analysis modules.
 
 **[Cuckoo]**  
 
@@ -119,7 +119,7 @@ Parameter             Description
 **timeout**           The maximum time a sample will run.
 **running timeout**   An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.
 **delete tasks**      When set to True, tasks will be deleted from Cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.
-**maec**              When set to True, a `MAEC <https://maecproject.github.io>'_ JSON-based report is added to Cuckoo JSON report. *NOTE*: Cuckoo needs MAEC reporting enabled to produce results.|
+**maec**              When set to True, a `MAEC <https://maecproject.github.io>`_ JSON-based report is added to Cuckoo JSON report. *NOTE*: Cuckoo needs MAEC reporting enabled to produce results.
 ====================  =============================
 
 **[ExifToolsScan]**
@@ -191,7 +191,7 @@ This module extracts out feature information from EXE files. It uses `pefile <ht
 
 **[Tika]**  
 
-This module extracts metadata from the file using [Tika](https://tika.apache.org/). For configuration of the module see the `tika-python <https://github.com/chrismattmann/tika-python/blob/master/README.md>`_ documentation.
+This module extracts metadata from the file using `Tika <https://tika.apache.org/>`_. For configuration of the module see the `tika-python <https://github.com/chrismattmann/tika-python/blob/master/README.md>`_ documentation.
 
 ====================  =============================
 Parameter             Description
@@ -210,7 +210,7 @@ This module searches `virustotal <https://www.virustotal.com/>`_ for the files h
 ====================  =============================
 Parameter             Description
 ====================  =============================
-**apikey**            Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.|
+**apikey**            Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.
 ====================  =============================
 
 **[VxStream]**  
@@ -253,6 +253,7 @@ $ docker-compose up
 This will build the 3 necessary containers (one for the web application, one for the REST API, and one for the ElasticSearch backend).
 
 Running this command will generate a lot of output and take some time. The system is not ready until you see the following output in your terminal:
+
 ```
 api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 ```
@@ -265,4 +266,4 @@ api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
 *Note 4:* This container will only be reachable / functioning on localhost.
 
-*Note 5:* Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment `[lines 18-20] <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18>`_ and `[lines 35-37] <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35>`_ Next, uncomment `[lines 25-28] <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25>`_ and set the correct proxy variables there. Finally, do the same thing in `lines 42-45 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42>`_. The docker-compose.yml file has comments to make clear where to make these changes.
+*Note 5:* Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment `lines 18-20 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18>`_ and `lines 35-37 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35>`_. Next, uncomment `lines 25-28 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25>`_ and set the correct proxy variables there. Finally, do the same thing in `lines 42-45 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42>`_. The docker-compose.yml file has comments to make clear where to make these changes.
