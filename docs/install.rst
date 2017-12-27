@@ -53,7 +53,7 @@ Add the following to your elasticsearch.yml config for the dedot processor to wo
 If planning to use the Multiscanner Web UI, also add the following::
 
     http.cors.enabled: true
-    http.cors.allow-origin: ``<yourOrigin>``
+    http.cors.allow-origin: <yourOrigin>
 
 Module Configuration
 --------------------
@@ -239,19 +239,15 @@ Parameter             Description
 Standalone Docker Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run:
+To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run::
 
-```
-$ docker-compose up
-```
+    $ docker-compose up
 
 This will build the 3 necessary containers (one for the web application, one for the REST API, and one for the ElasticSearch backend).
 
-Running this command will generate a lot of output and take some time. The system is not ready until you see the following output in your terminal:
+Running this command will generate a lot of output and take some time. The system is not ready until you see the following output in your terminal::
 
-```
-api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-```
+    api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
 *Note 1:* We assume you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
 
