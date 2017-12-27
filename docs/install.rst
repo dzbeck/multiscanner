@@ -139,7 +139,7 @@ Parameter             Description
 
 Detonates the sample in FireEye AX via FireEye's API. This "API" version replaces the "FireEye Scan" module.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{10cm}|
 
 ====================  =============================
 Parameter             Description
