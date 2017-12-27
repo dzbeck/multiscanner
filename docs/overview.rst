@@ -19,5 +19,5 @@ MultiScanner helps the malware analyst, enabling analysis with automated tools a
 
 .. image:: img/overview.png
    :align: center
-   :scale: 70 %
+   :scale: 50 %
    :alt: Overview
