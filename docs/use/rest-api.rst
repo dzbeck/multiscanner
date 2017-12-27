@@ -56,4 +56,3 @@ For now, this excerpt of the API Python code will serve as documentation:
     The API endpoints all have Cross Origin Resource Sharing (CORS) enabled. By
     default it will allow requests from any port on localhost. Change this setting
     by modifying the 'cors' setting in the 'api' section of the api config file.
-```
