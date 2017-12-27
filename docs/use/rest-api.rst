@@ -1,7 +1,7 @@
 RESTful API
 ===========
 
-For now, this excerpt of the API Python code will serve as documentation:
+For now, this excerpt of the API Python code will serve as documentation for the RESTful API:
 
 .. code-block:: python
     :linenos:
