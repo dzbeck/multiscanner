@@ -10,18 +10,16 @@ System Requirements
 
 Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
-An installer script is included in the project (`install.sh <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_) that installs the prerequisites on most systems.
+An installer script is included in the project (`install.sh <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_), which installs the prerequisites on most systems.
 
 Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. 
 
 Installing Ansible
 ------------------
 
-If you're running on a RedHat or Debian based linux distribution, run
-`install.sh <install.sh>`_. Otherwise, the required Python packages are defined in
-`requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_.
+If you're running on a RedHat or Debian based linux distribution, the `installer script https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_ should install required Python packages. Otherwise, refer to `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_ for requirement details.
 
-MultiScanner requries a configuration file to run. Generate the MultiScanner default
+MultiScanner requires a configuration file to run. Generate the MultiScanner default
 configuration by running ``python multiscanner.py init`` after cloning the repository.
 This command can be used to rewrite the configuration file to its default state or,
 if new modules have been written, to add their configuration to the configuration
@@ -52,12 +50,10 @@ Add the following to your elasticsearch.yml config for the dedot processor to wo
     script.painless.regex.enabled: true
 
 
-If planning to use the Multiscanner web UI, also add the following:
+If planning to use the Multiscanner web UI, also add the following::
 
-```
-http.cors.enabled: true
-http.cors.allow-origin: "<yourOrigin>"
-```
+    http.cors.enabled: true
+    http.cors.allow-origin: "<yourOrigin>"
 
 Module Configuration
 --------------------
