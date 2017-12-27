@@ -249,7 +249,7 @@ Running this command will generate a lot of output and take some time. The syste
 
     api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
-*Note 1:* We assume you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
+.. note:: We assume you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
 
 *Note 2:* Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for computing power (RAM). We recommend running this on a machine with at least 4GB of RAM.
 
