@@ -7,7 +7,7 @@ Details on the components of the MultiScanner architecture are given below the d
 
 .. image:: img/arch1.png
    :align: center
-   :scale: 80 %
+   :scale: 70 %
    :alt: MultiScanner Architecture
 
 * **Web Frontend**  
@@ -39,7 +39,7 @@ Each step of the MultiScanner workflow is described below the diagram.
 
 .. image:: img/arch2.png
    :align: center
-   :scale: 80 %
+   :scale: 75 %
    :alt: MultiScanner Workflow
 
 1. The user submits a sample file through the Web UI (or REST API). 
