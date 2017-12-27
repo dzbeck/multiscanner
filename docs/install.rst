@@ -69,7 +69,7 @@ Common Parameters
 
 The parameters below may be used by all modules.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -89,7 +89,7 @@ Parameters of Core Modules
 
 This module searches virustotal for a file hash and downloads the report, if available.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -110,7 +110,7 @@ Analysis modules with additional parameters are given below in alphabetical orde
 
 This module submits a file to a Cuckoo Sandbox cluster for analysis
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -127,7 +127,7 @@ Parameter             Description
 
 This module scans the file with Exif tools and returns the results.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -139,7 +139,7 @@ Parameter             Description
 
 Detonates the sample in FireEye AX via FireEye's API. This "API" version replaces the "FireEye Scan" module.
 
-.. tabularcolumns:: |p{3cm}|p{10cm}|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -159,7 +159,7 @@ Parameter             Description
 
 This module runs libmagic against the files.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -171,7 +171,7 @@ Parameter             Description
 
 This module runs Metadefender against the files.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================     =============================
 Parameter                Description
@@ -187,7 +187,7 @@ Parameter                Description
 
 This module looks up hashes in the NSRL database.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -204,7 +204,7 @@ This module extracts out feature information from EXE files. It uses `pefile <ht
 
 This module extracts metadata from the file using `Tika <https://tika.apache.org/>`_. For configuration of the module see the `tika-python <https://github.com/chrismattmann/tika-python/blob/master/README.md>`_ documentation.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -220,7 +220,7 @@ This module runs `TrID <http://mark0.net/soft-trid-e.html>`_ against a file. The
 
 This module searches `virustotal <https://www.virustotal.com/>`_ for the files hash and download the report if available.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -231,7 +231,7 @@ Parameter             Description
 **[VxStream]**  
 This module submits a file to a VxStream Sandbox cluster for analysis
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
@@ -250,7 +250,7 @@ Parameter             Description
 
 This module scans the files with yara and returns the results; yara-python must be installed.
 
-.. tabularcolumns:: |p{3cm}|l|
+.. tabularcolumns:: |p{3cm}|p{15cm}|
 
 ====================  =============================
 Parameter             Description
