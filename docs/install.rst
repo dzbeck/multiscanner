@@ -62,7 +62,7 @@ Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
 configuration file does not need to be manually updated.
 
-Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See `Analysis Modules <use/use-analysis-mods.md>`_ for information about all existing modules.
+Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See `Analysis Modules <use/use-analysis-mods.html>`_ for information about all existing modules.
 
 Common Parameters
 ^^^^^^^^^^^^^^^^^
