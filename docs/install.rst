@@ -92,9 +92,9 @@ Parameter             Description
 ====================  =============================
 **copyfilesto**       This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.
 **group-types**       This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.
-**storage-config**
-**api-config**
-**web-config**
+**storage-config**    Path to the storage config file.
+**api-config**        Path to the API config file.
+**web-config**        Path to the Web UI config file.
 ====================  =============================
 
 Parameters of Analysis Modules
@@ -110,7 +110,7 @@ This module submits a file to a Cuckoo Sandbox cluster for analysis
 Parameter             Description
 ====================  =============================
 **API URL**           The URL to the API server.
-**WEB URL** 
+**WEB URL**           The URL to the Web server.
 **timeout**           The maximum time a sample will run.
 **running timeout**   An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.
 **delete tasks**      When set to True, tasks will be deleted from Cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.
@@ -138,11 +138,11 @@ Parameter             Description
 **fireeye images**    A python list of the VMs in fireeye. These are used to generate where to copy the files.
 **username**          Username on the FireEye AX. 
 **password**          Password for the FireEye AX.
-**info level** 
-**timeout** 
-**force** 
-**analysis type**  
-**application id** 
+**info level**        Options are concise, normal, and extended.
+**timeout**           The maximum time a sample will run.
+**force**             If set to True, will rescan if the sample matches a previous scan.
+**analysis type**     0 = sandbox, 1 = live.
+**application id**    For AX Series appliances (7.7 and higher) and CM Series appliances that manage AX Series appliances (7.7 and higher), setting the application value to -1 allows the AX Series appliance to choose the application. For other appliances, setting the application value to 0 allows the AX Series appliance to choose the application.
 ====================  =============================
 
 **[libmagic]**  
@@ -159,15 +159,15 @@ Parameter             Description
 
 This module runs Metadefender against the files.
 
-====================  =============================
-Parameter             Description
-====================  =============================
-**timeout**           The maximum time a sample will run.|
-**running timeout**   An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.|
+====================     =============================
+Parameter                Description
+====================     =============================
+**timeout**              The maximum time a sample will run.|
+**running timeout**      An additional timeout, if a task is in the running state this many seconds past **timeout**, the task is considered failed.
 **fetch delay seconds** 
 **poll interval** 
 **user agent**
-====================  =============================
+====================     =============================
 
 **[NSRL]**  
 
@@ -251,10 +251,10 @@ Running this command will generate a lot of output and take some time. The syste
 
 *Note 1:* We assume you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
 
-*Note 2:* Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for RAM / computing power. We recommend running this on a machine with at least 4GB of RAM.
+*Note 2:* Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for computing power (RAM). We recommend running this on a machine with at least 4GB of RAM.
 
 *Note 3:* THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. Users should not run this in production or at scale. The MultiScanner framework is highly scalable and distributed, but that requires a full install. Currently, we support installing the distributed system via Ansible. More information about that process can be found here: `<https://github.com/mitre/multiscanner-ansible>`_.
 
-*Note 4:* This container will only be reachable / functioning on localhost.
+*Note 4:* This container will only be reachable and functionable on localhost.
 
 *Note 5:* Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment `lines 18-20 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18>`_ and `lines 35-37 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35>`_. Next, uncomment `lines 25-28 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25>`_ and set the correct proxy variables there. Finally, do the same thing in `lines 42-45 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42>`_. The docker-compose.yml file has comments to make clear where to make these changes.
