@@ -19,7 +19,7 @@ Installing Ansible
 ------------------
 
 If you're running on a RedHat or Debian based linux distribution, try and run
-[install.sh](<install.sh>). Otherwise the required python packages are defined in
+`install.sh <install.sh>`_. Otherwise the required python packages are defined in
 `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_.
 
 MultiScanner must have a configuration file to run. Generate the MultiScanner default
@@ -38,9 +38,9 @@ from `<http://www.freesshd.com/>`_.
 
 A network share accessible to both the MultiScanner and the analytic machines is
 required for the multi-machine setup. Once configured, the network share path must
-be identified in the configuration file, config.ini. To do this, set the `copyfilesto`
-option under `[main]` to be the mount point on the system running MultiScanner.
-Modules can have a `replacement path` option, which is the network share mount point
+be identified in the configuration file, config.ini. To do this, set the ``copyfilesto``
+option under ``[main]`` to be the mount point on the system running MultiScanner.
+Modules can have a ``replacement path`` option, which is the network share mount point
 on the analytic machine.
 
 Installing Elasticsearch
@@ -86,7 +86,8 @@ Parameter             Description
 **ENABLED**           When set to false, the module will not run.
 ====================  =============================
 
-### Parameters of Core Modules ###
+Parameters of Core Modules
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **[main]**  
 
@@ -102,7 +103,8 @@ Parameter             Description
 **web-config**
 ====================  =============================
 
-### Parameters of Analysis Modules ###
+Parameters of Analysis Modules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Analysis modules with additional parameters are given below in alphabetical order. See `Analysis Modules <use/use-analysis-mods.md>'_ for a list of all current analysis modules.
 
@@ -209,7 +211,7 @@ This module searches `virustotal <https://www.virustotal.com/>`_ for the files h
 ====================  =============================
 Parameter             Description
 ====================  =============================
-| **apikey** | Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.|
+**apikey**            Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.|
 ====================  =============================
 
 **[VxStream]**  
@@ -240,7 +242,8 @@ Parameter             Description
 **ignore-tags**       A python array of yara rule tags that will not be included in the report.
 ====================  =============================
 
-## Standalone Docker Installation ##
+Standalone Docker Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run:
 
