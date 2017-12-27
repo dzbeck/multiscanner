@@ -50,10 +50,10 @@ Add the following to your elasticsearch.yml config for the dedot processor to wo
     script.painless.regex.enabled: true
 
 
-If planning to use the Multiscanner web UI, also add the following::
+If planning to use the Multiscanner Web UI, also add the following::
 
     http.cors.enabled: true
-    http.cors.allow-origin: "<yourOrigin>"
+    http.cors.allow-origin: ``<yourOrigin>``
 
 Module Configuration
 --------------------
@@ -62,7 +62,7 @@ Modules are intended to be quickly written and incorporated into the framework.
 A finished module must be placed in the modules folder before it can be used. The
 configuration file does not need to be manually updated.
 
-Modules are configured within the configuration file, [config.ini](https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini). Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See [Analysis Modules](use/use-analysis-mods.md) for information about all existing modules.
+Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See `Analysis Modules <use/use-analysis-mods.md>`_ for information about all existing modules.
 
 Common Parameters
 ^^^^^^^^^^^^^^^^^
