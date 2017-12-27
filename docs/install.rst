@@ -1,29 +1,28 @@
 Installation
 ============
 
-Information for installing the different components of MultiScanner is provided below.
+Installation information for the different components of MultiScanner is provided below. If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the `Standalone Docker Installation`_. 
 
-If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, look into our `Standalone Docker Installation`_. The standalone system is less scalable, robust, and feature-rich, but it enables quick stand up the web UI, the REST API, and an ElasticSearch node enabling users to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
+The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an ElasticSearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
 System Requirements
 -------------------
 
 Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported but not thoroughly maintained and tested. Please submit an issue or a pull request fixing any issues found with other versions of Python.
 
-An installer script is included in the project `install.sh <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_ which
-installs the prerequisites on most systems.
+An installer script is included in the project (`install.sh <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_) that installs the prerequisites on most systems.
 
 Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. 
 
 Installing Ansible
 ------------------
 
-If you're running on a RedHat or Debian based linux distribution, try and run
-`install.sh <install.sh>`_. Otherwise the required python packages are defined in
+If you're running on a RedHat or Debian based linux distribution, run
+`install.sh <install.sh>`_. Otherwise, the required Python packages are defined in
 `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_.
 
-MultiScanner must have a configuration file to run. Generate the MultiScanner default
-configuration by running `python multiscanner.py init` after cloning the repository.
+MultiScanner requries a configuration file to run. Generate the MultiScanner default
+configuration by running ``python multiscanner.py init`` after cloning the repository.
 This command can be used to rewrite the configuration file to its default state or,
 if new modules have been written, to add their configuration to the configuration
 file.
@@ -50,7 +49,7 @@ Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) cha
 
 Add the following to your elasticsearch.yml config for the dedot processor to work::
 
-script.painless.regex.enabled: true
+    script.painless.regex.enabled: true
 
 
 If planning to use the Multiscanner web UI, also add the following:
