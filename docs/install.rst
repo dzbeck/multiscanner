@@ -48,11 +48,10 @@ Installing Elasticsearch
 
 Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called 'dedot' with a processor to replace dots in field names with underscores.
 
-Add the following to your elasticsearch.yml config for the dedot processor to work:
+Add the following to your elasticsearch.yml config for the dedot processor to work::
 
-```
 script.painless.regex.enabled: true
-```
+
 
 If planning to use the Multiscanner web UI, also add the following:
 
@@ -262,8 +261,8 @@ api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
 *Note 2:* Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for RAM / computing power. We recommend running this on a machine with at least 4GB of RAM.
 
-*Note 3:* &nbsp;  THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. Users should not run this in production or at scale. The MultiScanner framework is highly scalable and distributed, but that requires a full install. Currently, we support installing the distributed system via Ansible. More information about that process can be found here: https://github.com/mitre/multiscanner-ansible
+*Note 3:* THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. Users should not run this in production or at scale. The MultiScanner framework is highly scalable and distributed, but that requires a full install. Currently, we support installing the distributed system via Ansible. More information about that process can be found here: `<https://github.com/mitre/multiscanner-ansible>`_.
 
-*Note 4:* &nbsp;  This container will only be reachable / functioning on localhost.
+*Note 4:* This container will only be reachable / functioning on localhost.
 
-*Note 5:* &nbsp;  Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment [lines 18-20](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18) and [lines 35-37](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35). Next, uncomment [lines 25-28](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25) and set the correct proxy variables there. Finally, do the same thing in [lines 42-45](https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42). The docker-compose.yml file has comments to make clear where to make these changes.
+*Note 5:* Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment `[lines 18-20] <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18>`_ and `[lines 35-37] <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35>`_ Next, uncomment `[lines 25-28] <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25>`_ and set the correct proxy variables there. Finally, do the same thing in `lines 42-45 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42>`_. The docker-compose.yml file has comments to make clear where to make these changes.
