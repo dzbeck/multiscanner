@@ -87,7 +87,7 @@ Parameters of Core Modules
 
 This module searches virustotal for a file hash and downloads the report, if available.
 
-.. tabularcolumns:: |p{5cm}|l|
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================  =============================
 Parameter             Description
@@ -132,6 +132,8 @@ Parameter             Description
 **[FireeyeAPI]**  
 
 Detonates the sample in FireEye AX via FireEye's API. This "API" version replaces the "FireEye Scan" module.
+
+.. tabularcolumns:: |p{3cm}|l|
 
 ====================  =============================
 Parameter             Description
