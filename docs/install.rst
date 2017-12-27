@@ -3,7 +3,7 @@ Installation
 
 Information for installing the different components of MultiScanner is provided below.
 
-If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, look into our [docker standalone system](#standalone-docker-installation). Obviously, the standalone system will be far less scalable / robust / feature-rich. However, it will stand up the web UI, the REST API, and an ElasticSearch node for you to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
+If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, look into our `Standalone Docker Installation`_. The standalone system is less scalable, robust, and feature-rich, but it enables quick stand up the web UI, the REST API, and an ElasticSearch node enabling users to see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
 System Requirements
 -------------------
