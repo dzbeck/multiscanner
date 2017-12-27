@@ -7,11 +7,15 @@ For now, this excerpt of the API Python code will serve as documentation for the
 
     Supported operations:
     GET / ---> Test functionality. {'Message': 'True'}
+	
     GET /api/v1/files/<sha256>?raw={t|f} ----> download sample, defaults to passwd protected zip
+	
     GET /api/v1/modules ---> Receive list of modules available
+	
     GET /api/v1/tags ----> Receive list of all tags in use
+	
     GET /api/v1/tasks ---> Receive list of tasks in MultiScanner
-
+	
     POST /api/v1/tasks ---> POST file and receive report id
 
     Sample POST usage:
