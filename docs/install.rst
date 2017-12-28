@@ -1,7 +1,7 @@
 Installation
 ============
 
-Installation information for the different components of MultiScanner is provided below. If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the `Standalone Docker Installation`_. 
+Installation information for the different components of MultiScanner is provided below. If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on `Standalone Docker Installation`_. 
 
 The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an ElasticSearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
 
@@ -12,17 +12,15 @@ Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported 
 
 An installer script is included in the project (`install.sh <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_), which installs the prerequisites on most systems.
 
-Currently, MultiScanner is deployed with Ansible. We are also currently working to support deploying the distributed architecture via Docker. 
+Currently, MultiScanner is deployed with Ansible. We are working to support deployment of the distributed architecture via Docker. 
 
 Installing Ansible
 ------------------
 
-If you're running on a RedHat or Debian based linux distribution, the `installer script <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_ should install required Python packages. Otherwise, refer to `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_ for requirement details.
+The `installer script <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_ should install the required Python packages for users of RedHat- or Debian-based Linux distributions. Users of other distributions should refer to `requirements.txt <https://github.com/mitre/multiscanner/blob/feature-celery/requirements.txt>`_.
 
-MultiScanner requires a configuration file to run. Generate the MultiScanner default
-configuration by running ``python multiscanner.py init`` after cloning the repository.
-This command can be used to rewrite the configuration file to its default state or,
-if new modules have been written, to add their configuration to the configuration
+MultiScanner requires a configuration file to run. After cloning the repository, generate the MultiScanner default
+configuration by running ``python multiscanner.py init``. The command can be used to rewrite the configuration file to its default state or, if new modules have been written, to add their configuration details to the configuration
 file.
 
 Installing Analytic Machines
@@ -30,8 +28,7 @@ Installing Analytic Machines
 
 Default modules have the option to be run locally or via SSH. The development team
 runs MultiScanner on a Linux host and hosts the majority of analytical tools on
-a separate Windows machine. The SSH server used in this environment is freeSSHd
-from `<http://www.freesshd.com/>`_. 
+a separate Windows machine. The SSH server used in this environment is `freeSSHd <http://www.freesshd.com/>`_. 
 
 A network share accessible to both the MultiScanner and the analytic machines is
 required for the multi-machine setup. Once configured, the network share path must
@@ -43,14 +40,14 @@ on the analytic machine.
 Installing Elasticsearch
 ------------------------
 
-Starting with ElasticSearch 2.X, field names may no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called 'dedot' with a processor to replace dots in field names with underscores.
+Starting with ElasticSearch 2.x, field names can no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called "dedot" with a processor to replace dots in field names with underscores.
 
-Add the following to your elasticsearch.yml config for the dedot processor to work::
+Add the following to the elasticsearch.yml configuration file for the dedot processor to work::
 
     script.painless.regex.enabled: true
 
 
-If planning to use the Multiscanner Web UI, also add the following::
+To use the Multiscanner Web UI, also add the following::
 
     http.cors.enabled: true
     http.cors.allow-origin: <yourOrigin>
@@ -58,11 +55,15 @@ If planning to use the Multiscanner Web UI, also add the following::
 Module Configuration
 --------------------
 
-Modules are intended to be quickly written and incorporated into the framework.
-A finished module must be placed in the modules folder before it can be used. The
-configuration file does not need to be manually updated.
+Modules are intended to be quickly written and incorporated into the framework. Note:
 
-Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. Parameters used by all modules are shown in the table below. Module-specific parameters follow for those modules that have them. See `Analysis Modules <use/use-analysis-mods.html>`_ for information about all existing modules.
+* A finished module must be placed in the modules folder before it can be used. 
+
+* The configuration file does not need to be manually updated.
+
+* Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. 
+
+Parameters common to all modules are listed in the next section, and module-specific parameters (for those core and analysis modules that have them) are listed in the subsequent sections. See `Analysis Modules <use/use-analysis-mods.html>`_ for information about *all* current modules.
 
 Common Parameters
 ^^^^^^^^^^^^^^^^^
@@ -74,12 +75,12 @@ The parameters below may be used by all modules.
 ====================  =============================
 Parameter             Description
 ====================  =============================
-**path**              Location of the executable.
-**cmdline**           An array of command line options to be passed to the executable.
-**host**              The hostname, port, and username of the machine that will be SSH’d into to run the analytic if the executable is not present on the local machine.
-**key**               The SSH key to be used to SSH into the host.
-**replacement path**  If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. 
-**ENABLED**           When set to false, the module will not run.
+*path*                Location of the executable.
+*cmdline*             An array of command line options to be passed to the executable.
+*host*                The hostname, port, and username of the machine that will be SSH’d into to run the analytic if the executable is not present on the local machine.
+*key*                 The SSH key to be used to SSH into the host.
+*replacement path*    If the main config is set to copy the scanned files this will be what it replaces the path with. It should be where the network share is mounted. 
+*ENABLED*             When set to false, the module will not run.
 ====================  =============================
 
 Parameters of Core Modules
