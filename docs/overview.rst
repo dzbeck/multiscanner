@@ -17,7 +17,10 @@ Key Capabilities
 ----------------
 MultiScanner helps the malware analyst, enabling analysis with automated tools and manual tools, providing integration and scaling capabilities, and corrolating analysis results. It allows analysts to associate metadata with samples and also allows integration of data from external sources. MultiScanner is particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
 
-.. image:: img/overview.png
+.. figure:: img/overview.png
    :align: center
    :scale: 40 %
    :alt: Overview
+   
+   Key Capabilities
+
