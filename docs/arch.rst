@@ -9,6 +9,8 @@ Details on the components of the MultiScanner architecture are given below the d
    :align: left
    :scale: 45 %
    :alt: MultiScanner Architecture
+   :figclass: align-center
+   
    MultiScanner Architecture
 
 * **Web Frontend**  
