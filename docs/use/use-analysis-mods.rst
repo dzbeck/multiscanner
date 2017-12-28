@@ -2,7 +2,9 @@ Analysis Modules
 ================
 
 The analysis modules currently available in MultiScanner are listed below.
-   
+
+.. tabularcolumns:: |p{3cm}|p{12cm}|
+
 =============================  ========================================
 AV Scans
 =============================  ========================================
@@ -14,6 +16,8 @@ Metadefender
 vtsearch                       Searches VirusTotal for sample’s hash and downloads the report if available               
 =============================  ========================================
 
+.. tabularcolumns:: |p{3cm}|p{12cm}|
+
 =============================  ========================================
 Sandbox Detonation 
 =============================  ========================================
@@ -21,6 +25,8 @@ Cuckoo Sandbox                 Submits a sample to Cuckoo Sandbox cluster for an
 FireEye API                    Detonates the sample in FireEye AX via FireEye's API.
 VxStream                       Submits a file to a VxStream Sandbox cluster for analysis.
 =============================  ========================================
+
+.. tabularcolumns:: |p{3cm}|p{12cm}|
 
 =============================  ========================================
 Metadata
@@ -40,6 +46,7 @@ pehasher                       Computes pehash values using a variety of algorit
 ssdeep                         Generates context triggered piecewise hashes (CTPH) for files. More information can be found on the `ssdeep website <http://ssdeep.sourceforge.net/>`_.
 =============================  ========================================
 
+.. tabularcolumns:: |p{3cm}|p{12cm}|
 
 =============================  ========================================
 Signatures 

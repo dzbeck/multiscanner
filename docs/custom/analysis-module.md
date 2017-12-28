@@ -7,7 +7,6 @@ Modules are intended to be quickly written and incorporated into the MultiScanne
  
 See this [example module](example.html).
 
-
 ## Mandatory Functions ##
 When writing a new module, there are two mandatory functions that must be defined: check() and scan(). Additional functions can be written if required.
 
