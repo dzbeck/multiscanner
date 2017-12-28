@@ -3,7 +3,7 @@ Installation
 
 Installation information for the different components of MultiScanner is provided below. To get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on `Standalone Docker Installation`_. 
 
-The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an ElasticSearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for operational use.
+The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an Elasticsearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for operational use.
 
 System Requirements
 -------------------
@@ -40,7 +40,7 @@ on the analytic machine.
 Installing Elasticsearch
 ------------------------
 
-Starting with ElasticSearch 2.x, field names can no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called "dedot" with a processor to replace dots in field names with underscores.
+Starting with Elasticsearch 2.x, field names can no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called "dedot" with a processor to replace dots in field names with underscores.
 
 Add the following to the elasticsearch.yml configuration file for the dedot processor to work::
 
@@ -268,7 +268,7 @@ To introduce new users to the power of the MultiScanner framework, web UI, and R
 
     $ docker-compose up
 
-This will build the 3 necessary containers (one for the web application, one for the REST API, and one for the ElasticSearch backend).
+This will build the 3 necessary containers (one for the web application, one for the REST API, and one for the Elasticsearch backend).
 
 Running this command will generate a lot of output and take some time. The system is not ready until you see the following output in your terminal::
 
@@ -278,7 +278,7 @@ Running this command will generate a lot of output and take some time. The syste
 	
 .. note:: The latest versions of docker and docker-compose are assumed to be installed. Installation guides are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
 
-.. note:: Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for computing power (RAM). We recommend running this on a machine with at least 4GB of RAM.
+.. note:: Because this docker container runs two web applications and an Elasticsearch node, there is a fairly high requirement for computing power (RAM). We recommend running this on a machine with at least 4GB of RAM.
 
 .. note:: This container will only be reachable and functionable on localhost.
 

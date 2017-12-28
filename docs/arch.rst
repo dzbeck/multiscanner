@@ -7,7 +7,7 @@ Details on the components of the MultiScanner architecture are given below the d
 
 .. image:: img/arch1.png
    :align: center
-   :scale: 50 %
+   :scale: 45 %
    :alt: MultiScanner Architecture
 
 * **Web Frontend**  
@@ -15,7 +15,7 @@ The web application runs on `Flask <http://flask.pocoo.org/>`_, uses `Bootstrap 
 
 
 * **REST API**  
-The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database in order to facilitate task tracking. Additionally, it acts as a gateway to the backend ElasticSearch document store. Searches entered into the web UI will be routed through the REST API and passed to the ElasticSearch cluster. This abstracts the complexity of querying ElasticSearch and gives the user a simple web interface to work with.
+The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database in order to facilitate task tracking. Additionally, it acts as a gateway to the backend Elasticsearch document store. Searches entered into the web UI will be routed through the REST API and passed to the Elasticsearch cluster. This abstracts the complexity of querying Elasticsearch and gives the user a simple web interface to work with.
 
 * **Task Queue**
   
@@ -31,7 +31,7 @@ GlusterFS is our distributed file system. Each component that needs access to th
 The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). A worker node will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan (these values are configurable). All worker nodes have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
 
 * **Report Storage**  
-We use ElasticSearch to store the results of our file scans. This is where the true power of this system comes in. ElasticSearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
+We use Elasticsearch to store the results of our file scans. This is where the true power of this system comes in. Elasticsearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
 
 Complete Workflow
 -----------------
