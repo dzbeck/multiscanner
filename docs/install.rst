@@ -199,7 +199,9 @@ Parameter             Description
 
 **[PEFile]**  
 
-This module extracts out feature information from EXE files. It uses `pefile <https://code.google.com/p/pefile/>`_ which is currently not available for Python 3.
+This module extracts out feature information from EXE files. 
+
+* It uses `pefile <https://code.google.com/p/pefile/>`_ which is currently not available for Python 3.
 
 **[Tika]**  
 
@@ -215,7 +217,9 @@ Parameter             Description
 
 **[TrID]**  
 
-This module runs `TrID <http://mark0.net/soft-trid-e.html>`_ against a file. The definition file must be in the same folder as the executable malware sample.
+This module runs `TrID <http://mark0.net/soft-trid-e.html>`_ against a file. 
+
+* The definition file must be in the same folder as the executable malware sample.
 
 **[vtsearch]**  
 
