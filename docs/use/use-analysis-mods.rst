@@ -16,7 +16,7 @@ Metadefender
 vtsearch                       Searches VirusTotal for sample’s hash and downloads the report if available               
 =============================  ========================================
 
-.. tabularcolumns:: |p{3cm}|p{12cm}|
+.. tabularcolumns:: |p{5cm}|p{10cm}|
 
 =============================  ========================================
 Sandbox Detonation 
