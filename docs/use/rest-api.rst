@@ -3,7 +3,7 @@ RESTful API
 
 The RESTful API is provided by a Flask app that supports the following operations:
 
-.. tabularcolumns:: |p{2cm}|p{5cm}|p{8cm}|
+.. tabularcolumns:: |p{2cm}|p{6cm}|p{7cm}|
 
 ====== ======================================= =======================================
 Method URI                                     Description
