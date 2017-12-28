@@ -1,7 +1,7 @@
 Use Cases
 =========
 
-MultiScanner is intended to be used by secure operation centers (SOCs), malware analysis centers, and other organization involved with cyber threat information (CTI) sharing. This section outlines associated use cases.  
+MultiScanner is intended to be used by secure operation centers, malware analysis centers, and other organization involved with cyber threat information (CTI) sharing. This section outlines associated use cases.  
 
 Scalable Malware Analysis
 -------------------------
@@ -19,7 +19,7 @@ MultiScanner enables long term storage of binaries and metadata associated with 
 
 Data Enrichment
 ---------------
-Malware analysis results can be enriched in support of cyber threat intelligence (CTI) sharing objectives. In addition to data derived from analysis of submitted samples, other CTI sources can be integrated with MultiScanner, such as TAXII feeds, commercial CTI providers (FireEye, Proofpoint, CrowdStrike, etc.), and closed-source CTI providers.
+Malware analysis results can be enriched in support of CTI sharing objectives. In addition to data derived from analysis of submitted samples, other CTI sources can be integrated with MultiScanner, such as TAXII feeds, commercial CTI providers (FireEye, Proofpoint, CrowdStrike, etc.), and closed-source CTI providers.
 
 Data Analytics
 --------------
