@@ -1,7 +1,7 @@
 Overview
 ========
 MultiScanner is a distributed file analysis framework that assists the user in evaluating a set
-of files by automatically running a suite of tools for the user and aggregating the output.
+of files by automatically running a suite of tools and aggregating the output.
 Tools can be custom Python scripts, web APIs, software running on another machine, etc.
 Tools are incorporated by creating modules that run in the MultiScanner framework.
 
