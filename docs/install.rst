@@ -3,7 +3,7 @@ Installation
 
 Installation information for the different components of MultiScanner is provided below. To get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on `Standalone Docker Installation`_. 
 
-The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an Elasticsearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for operational use.
+The Docker standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an Elasticsearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but is not designed for operational use.
 
 System Requirements
 -------------------
@@ -26,7 +26,7 @@ file.
 Installing Analytic Machines
 ----------------------------
 
-Default modules have the option to be run locally or via SSH. The development team
+Default modules have the option of being run locally or via SSH. The development team
 runs MultiScanner on a Linux host and hosts the majority of analytical tools on
 a separate Windows machine. The SSH server used in this environment is `freeSSHd <http://www.freesshd.com/>`_. 
 
@@ -40,14 +40,14 @@ on the analytic machine.
 Installing Elasticsearch
 ------------------------
 
-Starting with Elasticsearch 2.x, field names can no longer contain '.' (dot) characters. Thus, the elasticsearch_storage module adds a pipeline called "dedot" with a processor to replace dots in field names with underscores.
+Starting with Elasticsearch 2.x, field names can no longer contain '.' (dot) characters. Thus, the MultiScanner elasticsearch_storage module adds a pipeline called "dedot" with a processor to replace dots in field names with underscores.
 
 Add the following to the elasticsearch.yml configuration file for the dedot processor to work::
 
     script.painless.regex.enabled: true
 
 
-To use the Multiscanner Web UI, also add the following::
+To use the Multiscanner web UI, also add the following::
 
     http.cors.enabled: true
     http.cors.allow-origin: "<yourOrigin>"
@@ -55,7 +55,7 @@ To use the Multiscanner Web UI, also add the following::
 Module Configuration
 --------------------
 
-Modules are intended to be quickly written and incorporated into the framework. Note:
+Modules are intended to be quickly written and incorporated into the framework. Note that:
 
 * A finished module must be placed in the modules folder before it can be used. 
 
@@ -86,9 +86,7 @@ Parameter             Description
 Parameters of Core Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**[main]**  
-
-This module searches virustotal for a file hash and downloads the report, if available.
+**[main]** - This module searches virustotal for a file hash and downloads the report, if available.
 
 .. tabularcolumns:: |p{3cm}|p{12cm}|
 
