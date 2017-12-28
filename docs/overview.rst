@@ -15,7 +15,7 @@ MultiScanner is available as open source in `GitHub <https://github.com/mitre/mu
 
 Key Capabilities
 ----------------
-MultiScanner helps the malware analyst, enabling analysis with automated tools and manual tools, providing integration and scaling capabilities, and corrolating analysis results. It allows analysts to associate metadata with samples and also allows integration of data from external sources. MultiScanner is particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
+As illustrated in the diagram below, MultiScanner helps the malware analyst, enabling analysis with automated tools and manual tools, providing integration and scaling capabilities, and corrolating analysis results. It allows analysts to associate metadata with samples and also allows integration of data from external sources. MultiScanner is particularly useful because all the data is linked across tools and samples, allowing analysts to pivot on data and to do analytics. 
 
 .. figure:: img/overview.png
    :align: center

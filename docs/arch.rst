@@ -3,7 +3,7 @@ Architecture
 
 High-level Architecture
 -----------------------
-Details on the components of the MultiScanner architecture are given below the diagram. 
+There are seven primary components of the MultiScanner architecture as described below and illustrated in the associated diagram. 
 
 .. figure:: img/arch1.png
    :align: center
