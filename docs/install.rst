@@ -133,7 +133,7 @@ This module scans the file with Exif tools and returns the results.
 ====================  =============================
 Parameter             Description
 ====================  =============================
-**remove-entry**      A python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out.
+**remove-entry**      A Python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out.
 ====================  =============================
 
 **[FireeyeAPI]**  
@@ -146,7 +146,7 @@ Detonates the sample in FireEye AX via FireEye's API. This "API" version replace
 Parameter             Description
 ====================  =============================
 **API URL**           The URL to the API server.
-**fireeye images**    A python list of the VMs in fireeye. These are used to generate where to copy the files.
+**fireeye images**    A Python list of the VMs in fireeye. These are used to generate where to copy the files.
 **username**          Username on the FireEye AX. 
 **password**          Password for the FireEye AX.
 **info level**        Options are concise, normal, and extended.
@@ -210,7 +210,7 @@ This module extracts metadata from the file using `Tika <https://tika.apache.org
 ====================  =============================
 Parameter             Description
 ====================  =============================
-**remove-entry**      A python list of Tika results that should not be included in the report.
+**remove-entry**      A Python list of Tika results that should not be included in the report.
 ====================  =============================
 
 **[TrID]**  
@@ -257,8 +257,8 @@ This module scans the files with yara and returns the results; yara-python must 
 Parameter             Description
 ====================  =============================
 **ruledir**           The directory to look for rule files in.
-**fileextensions**    A python array of all valid rule file extensions. Files not ending in one of these will be ignored.
-**ignore-tags**       A python array of yara rule tags that will not be included in the report.
+**fileextensions**    A Python array of all valid rule file extensions. Files not ending in one of these will be ignored.
+**ignore-tags**       A Python array of yara rule tags that will not be included in the report.
 ====================  =============================
 
 Standalone Docker Installation

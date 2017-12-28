@@ -51,4 +51,4 @@ If a module requires configuration, the DEFAULTCONF global variable must be defi
 
 If `replacement path` is set in the configuration, the module will receive file names, with the folder path replaced with the variable's value. This is useful for analytics which are run on a remote machine.
 
-By default, ConfigParser reads everything in as a string, before options are passed to the module `ast.literal_eval()` is ran on each option. If a string is not returned when expected, this is why. This does mean that the correct python type will be returned instead of all strings.
+By default, ConfigParser reads everything in as a string, before options are passed to the module `ast.literal_eval()` is ran on each option. If a string is not returned when expected, this is why. This does mean that the correct Python type will be returned instead of all strings.
