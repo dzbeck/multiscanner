@@ -1,7 +1,7 @@
 Installation
 ============
 
-Installation information for the different components of MultiScanner is provided below. To get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on `Standalone Docker Installation <install.rst#standalone-docker-installation>`. 
+Installation information for the different components of MultiScanner is provided below. To get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on :ref:`standalone-docker-installation`. 
 
 The Docker standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an Elasticsearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but is not designed for operational use.
 
@@ -239,6 +239,8 @@ Parameter             Description
 *fileextensions*      A Python array of all valid rule file extensions. Files not ending in one of these will be ignored.
 *ignore-tags*         A Python array of yara rule tags that will not be included in the report.
 ====================  =============================
+
+.. _standalone-docker-installation:
 
 Standalone Docker Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
