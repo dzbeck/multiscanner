@@ -6,6 +6,7 @@ High-level Architecture
 Details on the components of the MultiScanner architecture are given below the diagram. 
 
 .. figure:: img/arch1.png
+   :align: center
    :scale: 45 %
    :alt: MultiScanner Architecture
    
