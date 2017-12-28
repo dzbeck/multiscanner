@@ -1,9 +1,9 @@
 Installation
 ============
 
-Installation information for the different components of MultiScanner is provided below. If you'd like to get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on `Standalone Docker Installation`_. 
+Installation information for the different components of MultiScanner is provided below. To get an idea of how the system works without going through the full process of setting up the distributed architecture, refer to the section on `Standalone Docker Installation`_. 
 
-The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an ElasticSearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for use in production.
+The standalone system is less scalable, robust, and feature-rich, but it enables easy stand up the web UI, the REST API, and an ElasticSearch node, allowing users to quickly see how the system works. The standalone container is intended as an introduction to the system and its capabilities, but not designed for operational use.
 
 System Requirements
 -------------------
@@ -12,7 +12,7 @@ Python 3.6 is recommended. Compatibility with Python 2.7+ and 3.4+ is supported 
 
 An installer script is included in the project (`install.sh <https://github.com/mitre/multiscanner/blob/feature-celery/install.sh>`_), which installs the prerequisites on most systems.
 
-Currently, MultiScanner is deployed with Ansible. We are working to support deployment of the distributed architecture via Docker. 
+Currently, MultiScanner is deployed with Ansible, and we're working to support distributed architecture deployment via Docker. 
 
 Installing Ansible
 ------------------
@@ -63,7 +63,7 @@ Modules are intended to be quickly written and incorporated into the framework. 
 
 * Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. 
 
-Parameters common to all modules are listed in the next section, and module-specific parameters (for those core and analysis modules that have them) are listed in the subsequent sections. See `Analysis Modules <use/use-analysis-mods.html>`_ for information about *all* current modules.
+Parameters common to all modules are listed in the next section, and module-specific parameters (for core and analysis modules that have parameters) are listed in the subsequent sections. See `Analysis Modules <use/use-analysis-mods.html>`_ for information about *all* current modules.
 
 Common Parameters
 ^^^^^^^^^^^^^^^^^
@@ -105,7 +105,7 @@ Parameter             Description
 Parameters of Analysis Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Analysis modules with additional parameters are given below in alphabetical order. See `Analysis Modules <use/use-analysis-mods.md>`_ for a list of all current analysis modules.
+Analysis modules with additional parameters (or notes for installation) are given below in alphabetical order. See `Analysis Modules <use/use-analysis-mods.md>`_ for a list of all current analysis modules.
 
 **[Cuckoo]**  
 
@@ -199,7 +199,7 @@ Parameter             Description
 
 **[PEFile]**  
 
-This module extracts out feature information from EXE files. It uses `pefile <https://code.google.com/p/pefile/>`_ which is currently not available for python 3.
+This module extracts out feature information from EXE files. It uses `pefile <https://code.google.com/p/pefile/>`_ which is currently not available for Python 3.
 
 **[Tika]**  
 
@@ -274,12 +274,12 @@ Running this command will generate a lot of output and take some time. The syste
 
     api_1      |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
-.. note:: We assume you are already running latest version of docker and have the latest version of docker-compose installed on your machine. Guides on how to do that are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
+.. note::  THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. The MultiScanner framework is highly scalable and distributed, but it requires a full install. Currently, we support installing the distributed system via Ansible. More information about that process can be found here: `<https://github.com/mitre/multiscanner-ansible>`_.
+	
+.. note:: The latest versions of docker and docker-compose are assumed to be installed. Installation guides are here: https://docs.docker.com/engine/installation/ and here: https://docs.docker.com/compose/install/
 
 .. note:: Because this docker container runs two web applications and an ElasticSearch node, there is a fairly high requirement for computing power (RAM). We recommend running this on a machine with at least 4GB of RAM.
 
-.. note::  THIS CONTAINER IS NOT DESIGNED FOR PRODUCTION USE. This is simply a primer for using MultiScanner's web interface. Users should not run this in production or at scale. The MultiScanner framework is highly scalable and distributed, but that requires a full install. Currently, we support installing the distributed system via Ansible. More information about that process can be found here: `<https://github.com/mitre/multiscanner-ansible>`_.
-
 .. note:: This container will only be reachable and functionable on localhost.
 
-.. note:: Additionally, if you are installing this system behind a proxy, you must edit the docker-compose.yml file in four places. First, uncomment `lines 18-20 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18>`_ and `lines 35-37 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35>`_. Next, uncomment `lines 25-28 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25>`_ and set the correct proxy variables there. Finally, do the same thing in `lines 42-45 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42>`_. The docker-compose.yml file has comments to make clear where to make these changes.
+.. note:: The docker-compose.yml file must be edited in four places if the system is installed behind a proxy. First, uncomment `lines 18-20 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L18>`_ and `lines 35-37 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L35>`_. Next, uncomment `lines 25-28 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L25>`_ and set the correct proxy variables. Finally, do the same thing in `lines 42-45 <https://github.com/mitre/multiscanner/blob/feature-celery/docker-compose.yml#L42>`_. The docker-compose.yml file has comments to make clear where to make these changes.

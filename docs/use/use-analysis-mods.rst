@@ -3,7 +3,7 @@ Analysis Modules
 
 The analysis modules currently available in MultiScanner are listed below.
 
-.. tabularcolumns:: |p{3cm}|p{12cm}|
+.. tabularcolumns:: |p{4cm}|p{11cm}|
 
 =============================  ========================================
 AV Scans
@@ -16,7 +16,7 @@ Metadefender
 vtsearch                       Searches VirusTotal for sample’s hash and downloads the report if available               
 =============================  ========================================
 
-.. tabularcolumns:: |p{5cm}|p{10cm}|
+.. tabularcolumns:: |p{4cm}|p{11cm}|
 
 =============================  ========================================
 Sandbox Detonation 
