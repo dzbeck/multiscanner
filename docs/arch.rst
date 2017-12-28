@@ -40,10 +40,13 @@ Complete Workflow
 -----------------
 Each step of the MultiScanner workflow is described below the diagram.
 
-.. image:: img/arch2.png
+.. figure:: img/arch2.png
    :align: center
    :scale: 50 %
    :alt: MultiScanner Workflow
+   
+   MultiScanner Workflow
+..
 
 1. The user submits a sample file through the Web UI (or REST API). 
   
