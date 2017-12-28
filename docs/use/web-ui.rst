@@ -108,11 +108,11 @@ Reports can be searched from any page, with a few options. You can search Analys
    :scale: 50 %
    :alt: Navbar Search
 
-Use the "Default" search type to have wildcards automatically appended to the beginning and end of your search term. 
+* Use the "Default" search type to have wildcards automatically appended to the beginning and end of your search term. 
 
-Use the "Exact" search type to search automatically append quotes and search for the exact phrase. 
+* Use the "Exact" search type to search automatically append quotes and search for the exact phrase. 
 
-Finally, use the "Advanced" search type to search with the full power of Lucene query string syntax. Nothing will be automatically appended and you will need to escape any reserved characters yourself. 
+* Use the "Advanced" search type to search with the full power of Lucene query string syntax. Nothing will be automatically appended and you will need to escape any reserved characters yourself. 
 
 When you click on a search result, the search term will be highlighted on the Report page and the report will be expanded and automatically scrolled to the first match.
 
