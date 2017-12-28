@@ -1,7 +1,7 @@
 Analytics
 =========
 
-Currently, one analytic is available:
+Currently, one analytic is available.
 
 **[ssdeep]**
 

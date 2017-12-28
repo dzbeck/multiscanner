@@ -1,7 +1,7 @@
 Analysis Modules
 ================
 
-The analysis modules currently available in MultiScanner are listed below.
+The analysis modules currently available in MultiScanner are listed by catagory below.
 
 .. tabularcolumns:: |p{4cm}|p{11cm}|
 
@@ -11,8 +11,8 @@ AV Scans
 AVG 2014                       Scans sample with AVG 2014
 ClamAVScan                     Scans sample with ClamAV
 McAfeeScan                     Scans sample with McAfee AntiVirus Command Line
-Microsoft Security Essentials 
-Metadefender                  
+Microsoft Security Essentials  Scans sample with Microsoft Security Essentials
+Metadefender                   Interacts with OPSWAT Metadefender Core 4 Version 3.x, polling Metadefender for scan results.
 vtsearch                       Searches VirusTotal for sample’s hash and downloads the report if available               
 =============================  ========================================
 
@@ -34,7 +34,7 @@ Metadata
 ExifToolsScan                  Scans sample with Exif tools and returns the results.
 MD5                            Generates the MD5 hash of the sample.
 PEFile                         Extracts features from EXE files.
-SHA1
+SHA1                           Generates the SHA1 hash of the sample.
 SHA256                         Generates the SHA256 hash of the sample.
 Tika                           Extracts metadata from the sample using `Tika <https://tika.apache.org/)>`_.
 TrID                           Runs `TrID <http://mark0.net/soft-trid-e.html)>`_ against a file.
