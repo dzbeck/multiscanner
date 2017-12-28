@@ -174,15 +174,15 @@ This module runs Metadefender against the files.
 
 .. tabularcolumns:: |p{3cm}|p{12cm}|
 
-====================     =============================
-Parameter                Description
-====================     =============================
-*timeout*                The maximum time a sample will run.
-*running timeout*        An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
-*fetch delay seconds*    *needs defn*
-*poll interval*          *needs defn*
-*user agent*             *needs defn*
-====================     =============================
+====================  =============================
+Parameter             Description
+====================  =============================
+*timeout*             The maximum time a sample will run.
+*running timeout*     An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
+*fetch delay seconds* 
+*poll interval*       
+*user agent*          
+====================  =============================
 
 **[NSRL]**  
 
