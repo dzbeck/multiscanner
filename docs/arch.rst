@@ -5,14 +5,10 @@ High-level Architecture
 -----------------------
 Details on the components of the MultiScanner architecture are given below the diagram. 
 
-.. figure:: img/arch1.png
+.. image:: img/arch1.png
    :align: left
    :scale: 45 %
    :alt: MultiScanner Architecture
-   :figclass: align-center
-   
-   MultiScanner Architecture
-   
 
 * **Web Frontend**  
 The web application runs on `Flask <http://flask.pocoo.org/>`_, uses `Bootstrap <https://getbootstrap.com/>`_ and `jQuery <https://jquery.com/>`_, and served via Apache. It is essentially an aesthetic wrapper around the REST API; all data and services provided are also available by querying the REST API.

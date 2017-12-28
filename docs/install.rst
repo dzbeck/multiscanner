@@ -95,11 +95,11 @@ This module searches virustotal for a file hash and downloads the report, if ava
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*copyfilesto*       This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.
-*group-types*       This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.
-*storage-config*    Path to the storage config file.
-*api-config*        Path to the API config file.
-*web-config*        Path to the Web UI config file.
+*copyfilesto*         This is where the script will copy each file that is to be scanned. This can be removed or set to False to disable this feature.
+*group-types*         This is the type of analytics to group into sections for the report. This can be removed or set to False to disable this feature.
+*storage-config*      Path to the storage config file.
+*api-config*          Path to the API config file.
+*web-config*          Path to the Web UI config file.
 ====================  =============================
 
 Parameters of Analysis Modules
@@ -116,12 +116,12 @@ This module submits a file to a Cuckoo Sandbox cluster for analysis
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*API URL*           The URL to the API server.
-*WEB URL*           The URL to the Web server.
-*timeout*           The maximum time a sample will run.
-*running timeout*   An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
-*delete tasks*      When set to True, tasks will be deleted from Cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.
-*maec*              When set to True, a `MAEC <https://maecproject.github.io>`_ JSON-based report is added to Cuckoo JSON report. *NOTE*: Cuckoo needs MAEC reporting enabled to produce results.
+*API URL*             The URL to the API server.
+*WEB URL*             The URL to the Web server.
+*timeout*             The maximum time a sample will run.
+*running timeout*     An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
+*delete tasks*        When set to True, tasks will be deleted from Cuckoo after detonation. This is to prevent filling up the Cuckoo machine's disk with reports.
+*maec*                When set to True, a `MAEC <https://maecproject.github.io>`_ JSON-based report is added to Cuckoo JSON report. *NOTE*: Cuckoo needs MAEC reporting enabled to produce results.
 ====================  =============================
 
 **[ExifToolsScan]**
@@ -133,7 +133,7 @@ This module scans the file with Exif tools and returns the results.
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*remove-entry*      A Python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out.
+*remove-entry*        A Python list of ExifTool results that should not be included in the report. File system level attributes are not useful and stripped out.
 ====================  =============================
 
 **[FireeyeAPI]**  
@@ -145,15 +145,15 @@ Detonates the sample in FireEye AX via FireEye's API. This "API" version replace
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*API URL*           The URL to the API server.
-*fireeye images*    A Python list of the VMs in fireeye. These are used to generate where to copy the files.
-*username*          Username on the FireEye AX. 
-*password*          Password for the FireEye AX.
-*info level*        Options are concise, normal, and extended.
-*timeout*           The maximum time a sample will run.
-*force*             If set to True, will rescan if the sample matches a previous scan.
-*analysis type*     0 = sandbox, 1 = live.
-*application id*    For AX Series appliances (7.7 and higher) and CM Series appliances that manage AX Series appliances (7.7 and higher), setting the application value to -1 allows the AX Series appliance to choose the application. For other appliances, setting the application value to 0 allows the AX Series appliance to choose the application.
+*API URL*             The URL to the API server.
+*fireeye images*      A Python list of the VMs in fireeye. These are used to generate where to copy the files.
+*username*            Username on the FireEye AX. 
+*password*            Password for the FireEye AX.
+*info level*          Options are concise, normal, and extended.
+*timeout*             The maximum time a sample will run.
+*force*               If set to True, will rescan if the sample matches a previous scan.
+*analysis type*       0 = sandbox, 1 = live.
+*application id*      For AX Series appliances (7.7 and higher) and CM Series appliances that manage AX Series appliances (7.7 and higher), setting the application value to -1 allows the AX Series appliance to choose the application. For other appliances, setting the application value to 0 allows the AX Series appliance to choose the application.
 ====================  =============================
 
 **[libmagic]**  
@@ -165,7 +165,7 @@ This module runs libmagic against the files.
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*magicfile*         The path to the compiled magic file you wish to use. If None it will use the default one.
+*magicfile*           The path to the compiled magic file you wish to use. If None it will use the default one.
 ====================  =============================
 
 **[Metadefender]**  
@@ -177,8 +177,8 @@ This module runs Metadefender against the files.
 ====================     =============================
 Parameter                Description
 ====================     =============================
-*timeout*              The maximum time a sample will run.|
-*running timeout*      An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
+*timeout*                The maximum time a sample will run.|
+*running timeout*        An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
 *fetch delay seconds* 
 *poll interval* 
 *user agent*
@@ -210,7 +210,7 @@ This module extracts metadata from the file using `Tika <https://tika.apache.org
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*remove-entry*      A Python list of Tika results that should not be included in the report.
+*remove-entry*        A Python list of Tika results that should not be included in the report.
 ====================  =============================
 
 **[TrID]**  
@@ -226,7 +226,7 @@ This module searches `virustotal <https://www.virustotal.com/>`_ for the files h
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*apikey*            Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.
+*apikey*              Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.
 ====================  =============================
 
 **[VxStream]**  
@@ -238,13 +238,13 @@ This module submits a file to a VxStream Sandbox cluster for analysis
 Parameter             Description
 ====================  =============================
 *BASE URL* 
-*API URL*           The URL to the API server (include the /api/ in this URL).
-*API Key*           The user's API key to the API server.
-*API Secret*        The user's secret to the API server.
+*API URL*             The URL to the API server (include the /api/ in this URL).
+*API Key*             The user's API key to the API server.
+*API Secret*          The user's secret to the API server.
 *Environment ID* 
 *Verify* 
-*timeout*           The maximum time a sample will run
-*running timeout*   An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
+*timeout*             The maximum time a sample will run
+*running timeout*     An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
 ====================  =============================
 
 **[YaraScan]**  
@@ -256,9 +256,9 @@ This module scans the files with yara and returns the results; yara-python must 
 ====================  =============================
 Parameter             Description
 ====================  =============================
-*ruledir*           The directory to look for rule files in.
-*fileextensions*    A Python array of all valid rule file extensions. Files not ending in one of these will be ignored.
-*ignore-tags*       A Python array of yara rule tags that will not be included in the report.
+*ruledir*             The directory to look for rule files in.
+*fileextensions*      A Python array of all valid rule file extensions. Files not ending in one of these will be ignored.
+*ignore-tags*         A Python array of yara rule tags that will not be included in the report.
 ====================  =============================
 
 Standalone Docker Installation
