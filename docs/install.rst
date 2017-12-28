@@ -177,11 +177,11 @@ This module runs Metadefender against the files.
 ====================     =============================
 Parameter                Description
 ====================     =============================
-*timeout*                The maximum time a sample will run.|
+*timeout*                The maximum time a sample will run.
 *running timeout*        An additional timeout, if a task is in the running state this many seconds past *timeout*, the task is considered failed.
-*fetch delay seconds* 
-*poll interval* 
-*user agent*
+*fetch delay seconds*    
+*poll interval*          
+*user agent*             
 ====================     =============================
 
 **[NSRL]**  
