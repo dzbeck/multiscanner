@@ -7,7 +7,7 @@ Details on the components of the MultiScanner architecture are given below the d
 
 .. image:: img/arch1.png
    :align: center
-   :scale: 60 %
+   :scale: 50 %
    :alt: MultiScanner Architecture
 
 * **Web Frontend**  
@@ -39,7 +39,7 @@ Each step of the MultiScanner workflow is described below the diagram.
 
 .. image:: img/arch2.png
    :align: center
-   :scale: 65 %
+   :scale: 50 %
    :alt: MultiScanner Workflow
 
 1. The user submits a sample file through the Web UI (or REST API). 
@@ -63,7 +63,7 @@ Each step of the MultiScanner workflow is described below the diagram.
 
 Analysis Modules
 ----------------
-MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built python scripts, web APIs, or software applications running on different machines. 
+MultiScanner is a file analysis framework that assists the user in evaluating malware samples by automatically running a suite of tools and aggregating the output. Tools can be custom built Python scripts, web APIs, or software applications running on different machines. 
 Analysis tools are integrated into MultiScanner via modules running in the MultiScanner framework. Existing module catagories include AV scanning, sandbox detonation, metadata extraction, and signature scanning. Modules can be enabled/disabled via a configuration file. Details are provided in the `Using MultiScanner <use/use-analysis-mods.html>`_ section.
 
 Analytics

@@ -50,7 +50,7 @@ Add the following to the elasticsearch.yml configuration file for the dedot proc
 To use the Multiscanner Web UI, also add the following::
 
     http.cors.enabled: true
-    http.cors.allow-origin: <yourOrigin>
+    http.cors.allow-origin: "<yourOrigin>"
 
 Module Configuration
 --------------------
