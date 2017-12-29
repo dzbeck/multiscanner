@@ -52,6 +52,8 @@ To use the Multiscanner web UI, also add the following::
     http.cors.enabled: true
     http.cors.allow-origin: "<yourOrigin>"
 
+..
+	
 .. _module-config:
 	
 Module Configuration
