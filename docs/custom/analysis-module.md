@@ -1,7 +1,7 @@
 Developing an Analysis Module
 =============================
 
-Modules are intended to be quickly written and incorporated into the MultiScanner framework. A module must be located in the [modules](<https://github.com/awest1339/multiscanner/tree/master/modules>) folder before it can be used. The configuration file does not need to be manually updated.
+Modules are intended to be quickly written and incorporated into the MultiScanner framework. A module must be in the modules folder for it to be used on the next run. The configuration file does not need to be manually updated.
  
 See this [example module](example.html).
 

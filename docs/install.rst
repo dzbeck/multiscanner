@@ -23,6 +23,8 @@ MultiScanner requires a configuration file to run. After cloning the repository,
 configuration by running ``python multiscanner.py init``. The command can be used to rewrite the configuration file to its default state or, if new modules have been written, to add their configuration details to the configuration
 file.
 
+.. _installing-analytic-machines:
+
 Installing Analytic Machines
 ----------------------------
 
