@@ -13,29 +13,35 @@ There are seven primary components of the MultiScanner architecture, as describe
    MultiScanner Architecture
 ..
 
-* **Web Frontend**  
+**Web Frontend**  
+
 The web application runs on `Flask <http://flask.pocoo.org/>`_, uses `Bootstrap <https://getbootstrap.com/>`_ and `jQuery <https://jquery.com/>`_, and is served via Apache. It is essentially an aesthetic wrapper around the REST API. All data and services provided are also available by querying the REST API.
 
 
-* **REST API**  
+**REST API**  
+
 The REST API is also powered by Flask and served via Apache. It has an underlying PostgreSQL database to facilitate task tracking. Additionally, it acts as a gateway to the backend Elasticsearch document store. Searches entered into the web UI will be routed through the REST API and passed to the Elasticsearch cluster. This abstracts the complexity of querying Elasticsearch and gives the user a simple web interface to work with.
 
-* **Task Queue**
+**Task Queue**
   
 We use Celery as our distributed task queue.
 
-* **Task Tracking**  
+**Task Tracking**  
+
 PostgreSQL is our task management database. It is here that we keep track of scan times, samples, and the status of tasks (pending, complete, failed).
 
-* **Distributed File System**  
+**Distributed File System**  
+
 GlusterFS is our distributed file system. Each component that needs access to the raw samples mounts the share via FUSE. We selected GlusterFS because it is more performant in our use case -- storing a large number of small samples -- than a technology like HDFS would be.
 
-* **Worker Nodes**  
+**Worker Nodes**  
+
 The worker nodes are Celery clients running the MultiScanner Python application. Additionally, we implemented some batching within Celery to improve the performance of our worker nodes (which operate better at scale). 
 
 A worker node will wait until there are 100 samples in its queue or 60 seconds have passed (whichever happens first) before kicking off its scan (these values are configurable). All worker nodes have the GlusterFS mounted, which gives access to the samples for scanning. In our setup, we co-locate the worker nodes with the GlusterFS nodes in order to reduce the network load of workers pulling samples from GlusterFS.
 
-* **Report Storage**  
+**Report Storage**  
+
 We use Elasticsearch to store the results of our file scans. This is where the true power of this system lies. Elasticsearch allows for performant, full text searching across all our reports and modules. This allows fast access to interesting details from your malware analysis tools, pivoting between samples, and powerful analytics on report output.
 
 .. _complete-workflow:
