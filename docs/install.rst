@@ -249,7 +249,7 @@ Parameter             Description
 .. _standalone-docker-installation:
 
 Standalone Docker Installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 To introduce new users to the power of the MultiScanner framework, web UI, and REST API, we have built a standalone docker application that is simple to run in new environments. Simply clone the top level directory and run::
 
