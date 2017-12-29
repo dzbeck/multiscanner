@@ -111,7 +111,7 @@ Parameters of Analysis Modules
 
 Analysis modules with additional parameters (or notes for installation) are given below in alphabetical order. See :ref:`analysis-modules` for a list of all current analysis modules.
 
-**[Cuckoo]** - submits a file to a Cuckoo Sandbox cluster for analysis
+**[Cuckoo]** - submits a file to a Cuckoo Sandbox cluster for analysis.
 
 .. tabularcolumns:: |p{3cm}|p{12cm}|
 
@@ -217,7 +217,7 @@ Parameter             Description
 *apikey*              Public/private api key. Can optionally make it a list and the requests will be distributed across them. This is useful when two groups with private api keys want to share the load and reports.
 ====================  =============================
 
-**[VxStream]** - submits a file to a VxStream Sandbox cluster for analysis
+**[VxStream]** - submits a file to a VxStream Sandbox cluster for analysis.
 
 .. tabularcolumns:: |p{3cm}|p{12cm}|
 
