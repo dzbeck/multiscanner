@@ -7,9 +7,9 @@ Tools are incorporated by creating modules that run in the MultiScanner framewor
 
 Modules are designed to be quickly written and easily incorporated into the framework.
 Existing modules are related to malware analysis, but the framework is not limited in
-scope. For descriptions of existing modules, see `Analysis Modules <use/use-analysis-mods.html>`_. Module configuration options are given in the `Installation <install.html#module-configuration>`_ section.
+scope. For descriptions of existing modules, see :ref:`analysis-modules`. Module configuration options are given in :ref:`module-config`.
 
-MultiScanner supports a distributed workflow for sample storage, analysis, and report viewing. This functionality includes a web interface, a REST API, a distributed file system (GlusterFS), distributed report storage / searching (Elasticsearch), and distributed task management (Celery / RabbitMQ). See the `workflow diagram <arch.html#complete-workflow>`_ for details.
+MultiScanner supports a distributed workflow for sample storage, analysis, and report viewing. This functionality includes a web interface, a REST API, a distributed file system (GlusterFS), distributed report storage / searching (Elasticsearch), and distributed task management (Celery / RabbitMQ). See the :ref:`complete-workflow` section for details.
 
 MultiScanner is available as open source in `GitHub <https://github.com/mitre/multiscanner/tree/feature-celery>`_.
 

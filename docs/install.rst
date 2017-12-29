@@ -52,6 +52,8 @@ To use the Multiscanner web UI, also add the following::
     http.cors.enabled: true
     http.cors.allow-origin: "<yourOrigin>"
 
+.. _module-config:
+	
 Module Configuration
 --------------------
 
@@ -63,7 +65,7 @@ Modules are intended to be quickly written and incorporated into the framework. 
 
 * Modules are configured within the configuration file, `config.ini <https://github.com/mitre/multiscanner/blob/feature-celery/docker_utils/config.ini>`_. 
 
-Parameters common to all modules are listed in the next section, and module-specific parameters (for core and analysis modules that have parameters) are listed in the subsequent sections. See `Analysis Modules <use/use-analysis-mods.html>`_ for information about *all* current modules.
+Parameters common to all modules are listed in the next section, and module-specific parameters (for core and analysis modules that have parameters) are listed in the subsequent sections. See :ref:`analysis-modules` for information about *all* current modules.
 
 Common Parameters
 ^^^^^^^^^^^^^^^^^
@@ -103,7 +105,7 @@ Parameter             Description
 Parameters of Analysis Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Analysis modules with additional parameters (or notes for installation) are given below in alphabetical order. See `Analysis Modules <use/use-analysis-mods.md>`_ for a list of all current analysis modules.
+Analysis modules with additional parameters (or notes for installation) are given below in alphabetical order. See :ref:`analysis-modules` for a list of all current analysis modules.
 
 **[Cuckoo]** - This module submits a file to a Cuckoo Sandbox cluster for analysis
 
