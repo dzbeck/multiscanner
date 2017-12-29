@@ -255,7 +255,7 @@ To introduce new users to the power of the MultiScanner framework, web UI, and R
 
     $ docker-compose up
 
-This will build the 3 necessary containers (one for the web application, one for the REST API, and one for the Elasticsearch backend).
+This will build the three necessary containers (one for the web application, one for the REST API, and one for the Elasticsearch backend).
 
 Running this command will generate a lot of output and take some time. The system is not ready until you see the following output in your terminal::
 

@@ -183,7 +183,7 @@ These notes and comments can be edited and deleted. Click the "<" button to coll
    :alt: Close Notes
 
 Viewing Analytics
----------------
+-----------------
 
 The Analytics page displays various pieces of advanced analysis. For now, this is limited to ssdeep comparisons.
 
